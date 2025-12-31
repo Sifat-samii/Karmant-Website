@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "name": "Zami Hossain",
+      "role": "Bass",
+      "years": "2016–present",
+      "bio": "Bassist and founding member",
+      "socials": {}
+    },
+    {
+      "name": "Rumman",
+      "role": "Guitars",
+      "years": "2018–present",
+      "bio": "Guitarist",
+      "socials": {}
+    },
+    {
+      "name": "Naweed Kabir",
+      "role": "Drums",
+      "years": "2020–present",
+      "bio": "Drummer",
+      "socials": {}
+    },
+    {
+      "name": "Rakibul Alam Rafat",
+      "role": "Guitars",
+      "years": "2022–present",
+      "bio": "Guitarist",
+      "socials": {}
+    }
+  ]
+}
+
+

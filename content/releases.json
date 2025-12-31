@@ -1,0 +1,21 @@
+{
+  "releases": [
+    {
+      "slug": "riot-in-uniform",
+      "title": "Riot in Uniform",
+      "type": "EP",
+      "releaseDate": "2021-04-01",
+      "artwork": "/images/releases/riot-in-uniform.jpg",
+      "tracklist": [
+        "Nuclear Outbreak",
+        "Riot in Uniform",
+        "Greed",
+        "General Destroyer"
+      ],
+      "streaming": {
+        "bandcamp": "https://karmant.bandcamp.com/album/riot-in-uniform"
+      },
+      "description": "Debut EP released April 1, 2021. Four tracks of raw thrash metal intensity from Dhaka, Bangladesh."
+    }
+  ]
+}

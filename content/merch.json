@@ -1,0 +1,47 @@
+{
+  "featured": [
+    {
+      "id": "1",
+      "name": "Hack & Slash T-Shirt",
+      "image": "/images/merch/tshirt-chaos.jpg",
+      "price": "$25",
+      "link": "https://karmant.bandcamp.com/merch/chaos-rising-tshirt"
+    },
+    {
+      "id": "2",
+      "name": "Logo Hoodie",
+      "image": "/images/merch/hoodie-logo.jpg",
+      "price": "$45",
+      "link": "https://karmant.bandcamp.com/merch/logo-hoodie"
+    },
+    {
+      "id": "3",
+      "name": "Vinyl - Hack & Slash",
+      "image": "/images/merch/vinyl-chaos.jpg",
+      "price": "$30",
+      "link": "https://karmant.bandcamp.com/merch/chaos-rising-vinyl"
+    },
+    {
+      "id": "4",
+      "name": "CD - Hack & Slash",
+      "image": "/images/merch/cd-chaos.jpg",
+      "price": "$15",
+      "link": "https://karmant.bandcamp.com/merch/chaos-rising-cd"
+    },
+    {
+      "id": "5",
+      "name": "Logo Patch",
+      "image": "/images/merch/patch-logo.jpg",
+      "price": "$8",
+      "link": "https://karmant.bandcamp.com/merch/logo-patch"
+    },
+    {
+      "id": "6",
+      "name": "Logo Sticker Pack",
+      "image": "/images/merch/stickers.jpg",
+      "price": "$5",
+      "link": "https://karmant.bandcamp.com/merch/sticker-pack"
+    }
+  ]
+}
+

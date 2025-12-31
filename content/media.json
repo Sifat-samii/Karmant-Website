@@ -1,0 +1,6 @@
+{
+  "videos": [],
+  "note": "Add YouTube video IDs in the videos array. Format: { \"id\": \"youtube-video-id\", \"title\": \"Video Title\" }"
+}
+
+

@@ -1,0 +1,34 @@
+{
+  "shortBio": "Karmant is an underground thrash metal band from Dhaka, Bangladesh, formed in 2016.",
+  "longBio": "Karmant is an independent thrash metal band hailing from Dhaka, Bangladesh. Formed in 2016, the band has been active in the underground metal scene, delivering raw and uncompromising thrash metal.\n\nIn April 2021, Karmant released their debut EP 'Riot in Uniform', featuring four tracks: Nuclear Outbreak, Riot in Uniform, Greed, and General Destroyer. The release showcases the band's dedication to the classic thrash metal sound while maintaining their own identity.\n\nAs an unsigned, independent band, Karmant continues to create and perform, contributing to the growing metal scene in Bangladesh and beyond.",
+  "members": [
+    {
+      "name": "Zami Hossain",
+      "role": "Bass",
+      "bio": "Bassist and founding member (2016–present)",
+      "socials": {}
+    },
+    {
+      "name": "Rumman",
+      "role": "Guitars",
+      "bio": "Guitarist (2018–present)",
+      "socials": {}
+    },
+    {
+      "name": "Naweed Kabir",
+      "role": "Drums",
+      "bio": "Drummer (2020–present)",
+      "socials": {}
+    },
+    {
+      "name": "Rakibul Alam Rafat",
+      "role": "Guitars",
+      "bio": "Guitarist (2022–present)",
+      "socials": {}
+    }
+  ],
+  "gear": {
+    "enabled": false,
+    "description": ""
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "bandName": "Karmant",
+  "tagline": "Bangladesh Thrash Metal",
+  "location": "Dhaka, Bangladesh",
+  "formed": 2016,
+  "genre": "Thrash Metal",
+  "label": "Unsigned/Independent",
+  "disambiguation": "Karmant (BD) — Thrash Metal band",
+  "socials": {
+    "facebook": "https://www.facebook.com/mercilesskarmant/",
+    "instagram": "",
+    "twitter": "",
+    "youtube": "",
+    "spotify": "",
+    "bandcamp": "https://karmant.bandcamp.com"
+  },
+  "emails": {
+    "booking": "mercilesskarmant@gmail.com",
+    "press": "mercilesskarmant@gmail.com",
+    "management": "mercilesskarmant@gmail.com",
+    "general": "mercilesskarmant@gmail.com"
+  },
+  "phone": "+8801951320559",
+  "externalLinks": {
+    "merch": "https://karmant.bandcamp.com/merch",
+    "bandsintown": "",
+    "songkick": ""
+  },
+  "newsletter": {
+    "provider": "mailchimp",
+    "endpoint": ""
+  }
+}
