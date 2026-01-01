@@ -1,34 +1,94 @@
 {
-  "members": [
+  "currentLineup": [
     {
       "name": "Zami Hossain",
-      "role": "Bass",
+      "role": "Bass / Vocals",
       "years": "2016–present",
-      "bio": "Bassist and founding member",
-      "socials": {}
-    },
-    {
-      "name": "Rumman",
-      "role": "Guitars",
-      "years": "2018–present",
-      "bio": "Guitarist",
+      "bio": "Founding member and primary songwriter. Handles both vocal duties and bass guitar, bringing raw energy and aggression to Karmant's sound.",
+      "image": "/images/photos/Zami bhai/dp_zami.png",
       "socials": {}
     },
     {
       "name": "Naweed Kabir",
       "role": "Drums",
       "years": "2020–present",
-      "bio": "Drummer",
+      "bio": "Powerhouse drummer providing the relentless rhythm section. Known for aggressive fills and tight timing.",
+      "image": "/images/photos/Naweed bhai/dp_naweed.png",
       "socials": {}
     },
     {
+      "name": "Ashikur Rahman Ornob",
+      "role": "Vocals",
+      "years": "2024–present",
+      "bio": "Lead vocalist bringing powerful and dynamic vocal delivery to the band's aggressive sound.",
+      "image": "/images/photos/Ornob bhai/dp_ornob.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Sifat Sami",
+      "role": "Guitars",
+      "years": "2025–present",
+      "bio": "Guitarist adding technical precision and heavy riffs to the band's thrash metal sound.",
+      "image": "/images/photos/Sifat/dp_sifat.jpeg",
+      "socials": {}
+    }
+  ],
+  "pastMembers": [
+    {
       "name": "Rakibul Alam Rafat",
       "role": "Guitars",
-      "years": "2022–present",
-      "bio": "Guitarist",
+      "years": "2022–2025",
+      "image": "/images/photos/past members/rafat.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Waamik Hasan",
+      "role": "Guitars",
+      "years": "2024–2025",
+      "image": "/images/photos/past members/wamik_hasan.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Ruzlan Safat",
+      "role": "Vocals",
+      "years": "2023–2025",
+      "image": "/images/photos/past members/ruzlan.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Mujtaba Nurul Hamim",
+      "role": "Guitars",
+      "years": "2024–2025",
+      "image": "/images/photos/past members/hamim.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Abdullah Al Hai Shompod",
+      "role": "Guitars",
+      "years": "2024–2025",
+      "image": "/images/photos/past members/shompod.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Mahdee Manzil Shorgo",
+      "role": "Vocals",
+      "years": "2021–2023",
+      "image": "/images/photos/past members/mahdee.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Rumman Sharier",
+      "role": "Guitars",
+      "years": "2020–2022",
+      "image": "/images/photos/past members/rumman.jpg",
+      "socials": {}
+    },
+    {
+      "name": "Fahim Pasha",
+      "role": "Guitars",
+      "years": "2019–2023",
+      "image": "/images/photos/past members/fahim.jpg",
       "socials": {}
     }
   ]
 }
-
-

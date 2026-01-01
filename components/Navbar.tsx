@@ -22,7 +22,7 @@ const navLinks = [
   { href: '/news', label: 'News' },
   { href: '/community', label: 'Community' },
   { href: '/media', label: 'Media' },
-  { href: '/about', label: 'About' },
+  { href: '/band', label: 'Band' },
   { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },
 ]

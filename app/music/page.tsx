@@ -117,8 +117,28 @@ function MusicPageContent() {
   return (
     <div className="pt-20 pb-20">
       {/* Header */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden mb-4 min-h-[300px]">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-no-repeat"
+          style={{
+            backgroundImage: `url('/images/Desolate%20futuristic%20wasteland%20and%20survivors.png')`,
+            backgroundPosition: 'center 75%',
+            opacity: 0.3,
+          }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Gradient - dark to black from top to bottom */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 85%, black 100%)',
+          }}
+        />
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto text-center pt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-4 font-display uppercase tracking-tight">
             Discography
           </h1>
