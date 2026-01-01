@@ -114,14 +114,68 @@ Edit `content/site.json` to update:
 ### Adding/Editing Releases
 
 Edit `content/releases.json`. Each release should have:
-- `slug`: URL-friendly identifier
+- `slug`: URL-friendly identifier (e.g., "riot-in-uniform")
 - `title`: Release title
-- `type`: "album", "ep", "single", "demo", etc.
+- `type`: "EP", "Album", "Single", "Live", etc. (capitalized)
 - `releaseDate`: ISO date string (YYYY-MM-DD)
-- `artwork`: Path to artwork image
-- `tracklist`: Array of track names (optional)
-- `streaming`: Object with platform URLs
-- `description`: Release description
+- `artwork`: Path to artwork image (e.g., "/images/releases/riot-in-uniform.jpg")
+- `tracklist`: Array of track names (required for proper display)
+- `streaming`: Object with platform URLs:
+  - `bandcamp`: Bandcamp album URL
+  - `spotify`: Spotify URL (optional)
+  - `apple`: Apple Music URL (optional)
+  - `youtube`: YouTube URL (optional)
+- `description`: Release description (supports line breaks)
+- `featuredTrack`: Track name to highlight (optional, defaults to first track)
+- `duration`: Total duration string (optional, e.g., "25:30")
+- `credits`: Object with credits (optional):
+  - `producer`: Producer name
+  - `mix`: Mix engineer name
+  - `master`: Mastering engineer name
+- `streamEmbeds`: Object with HTML embed codes (optional):
+  - `bandcamp`: Bandcamp iframe HTML for quick preview modal
+- `merchLink`: Link to related merch (optional)
+- `relatedVideos`: Array of related YouTube videos (optional):
+  - `title`: Video title
+  - `youtubeId`: YouTube video ID
+  - `url`: Direct URL (optional)
+
+**Example release:**
+```json
+{
+  "slug": "riot-in-uniform",
+  "title": "Riot in Uniform",
+  "type": "EP",
+  "releaseDate": "2021-04-01",
+  "artwork": "/images/releases/riot-in-uniform.jpg",
+  "tracklist": [
+    "Nuclear Outbreak",
+    "Riot in Uniform",
+    "Greed",
+    "General Destroyer"
+  ],
+  "streaming": {
+    "bandcamp": "https://karmant.bandcamp.com/album/riot-in-uniform",
+    "spotify": "",
+    "apple": "",
+    "youtube": ""
+  },
+  "description": "Debut EP released April 1, 2021. Four tracks of raw thrash metal intensity from Dhaka, Bangladesh.",
+  "featuredTrack": "Riot in Uniform",
+  "duration": "18:45",
+  "credits": {
+    "producer": "",
+    "mix": "",
+    "master": ""
+  }
+}
+```
+
+**Adding Artwork:**
+1. Place artwork image in `public/images/releases/`
+2. Use descriptive filename (e.g., `riot-in-uniform.jpg`)
+3. Recommended size: 1000x1000px or larger (square)
+4. Reference in `artwork` field: `/images/releases/filename.jpg`
 
 ### Adding/Editing Tour Dates
 

@@ -32,7 +32,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-metal-red text-white px-6 py-3 font-bold uppercase tracking-wider transition-all duration-200 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-metal-red focus:ring-offset-2 focus:ring-offset-metal-darker;
+    @apply bg-metal-red text-white px-6 py-3 font-bold uppercase tracking-wider transition-all duration-200 hover:bg-red-600 hover:scale-105 hover:shadow-md hover:shadow-metal-red/30 focus:outline-none focus:ring-2 focus:ring-metal-red focus:ring-offset-2 focus:ring-offset-metal-darker;
   }
 
   .btn-secondary {
@@ -69,6 +69,188 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
     opacity: 0.3;
+  }
+
+  /* Thrash Metal UI Utilities */
+  .hazard-stripe {
+    background: repeating-linear-gradient(
+      45deg,
+      #dc2626,
+      #dc2626 10px,
+      #000000 10px,
+      #000000 20px
+    );
+  }
+
+  .hazard-stripe-vertical {
+    background: repeating-linear-gradient(
+      90deg,
+      #dc2626,
+      #dc2626 10px,
+      #000000 10px,
+      #000000 20px
+    );
+  }
+
+  .thrash-border {
+    position: relative;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+  }
+
+  .thrash-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 1px solid rgba(220, 38, 38, 0.1);
+    pointer-events: none;
+  }
+
+  .distortion-hover {
+    transition: filter 0.2s ease;
+  }
+
+  .distortion-hover:hover {
+    animation: flicker-throb 0.8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .distortion-hover:hover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(220, 38, 38, 0.1) 50%,
+        transparent 100%
+      );
+      animation: scanline 0.3s ease;
+      pointer-events: none;
+    }
+  }
+
+  @keyframes scanline {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes flicker-throb {
+    0%, 100% {
+      filter: contrast(1.1) brightness(1.05) saturate(1.1) hue-rotate(0deg);
+      transform: scale(1);
+    }
+    25% {
+      filter: contrast(1.2) brightness(1.15) saturate(1.25) hue-rotate(3deg);
+      transform: scale(1.0012);
+    }
+    50% {
+      filter: contrast(1.12) brightness(1.08) saturate(1.15) hue-rotate(-2deg);
+      transform: scale(0.9996);
+    }
+    75% {
+      filter: contrast(1.18) brightness(1.12) saturate(1.22) hue-rotate(2deg);
+      transform: scale(1.0008);
+    }
+  }
+
+  .signal-meter {
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #dc2626;
+    position: relative;
+    margin: 0 2px;
+    animation: signalPulse 1.5s ease-in-out infinite;
+  }
+
+  .signal-meter:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .signal-meter:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes signalPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+    50% { opacity: 1; transform: scaleY(1); }
+  }
+
+  .waveform-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #dc2626, transparent);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .waveform-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.5), transparent);
+    animation: waveformMove 2s linear infinite;
+  }
+
+  @keyframes waveformMove {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  .card-tilt {
+    transition: transform 0.2s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card-tilt:hover {
+      transform: rotate(1deg) scale(1.02);
+    }
+  }
+
+  .strike-line {
+    position: relative;
+  }
+
+  .strike-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #dc2626;
+    transition: width 0.3s ease;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .strike-line:hover::after {
+      width: 100%;
+    }
+  }
+
+  .setlist-card {
+    background: #1a1a1a;
+    border-left: 3px solid #dc2626;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .setlist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 4px,
+      rgba(220, 38, 38, 0.3) 4px,
+      rgba(220, 38, 38, 0.3) 8px
+    );
   }
 }
 

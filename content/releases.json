@@ -13,9 +13,13 @@
         "General Destroyer"
       ],
       "streaming": {
-        "bandcamp": "https://karmant.bandcamp.com/album/riot-in-uniform"
+        "bandcamp": "https://karmant.bandcamp.com/album/riot-in-uniform",
+        "spotify": "",
+        "apple": "",
+        "youtube": ""
       },
-      "description": "Debut EP released April 1, 2021. Four tracks of raw thrash metal intensity from Dhaka, Bangladesh."
+      "description": "Debut EP released April 1, 2021. Four tracks of raw thrash metal intensity from Dhaka, Bangladesh.",
+      "featuredTrack": "Riot in Uniform"
     }
   ]
 }
