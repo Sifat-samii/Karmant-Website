@@ -50,62 +50,324 @@
   },
   {
     "id": "show-2",
-    "title": "Thrash Metal Night",
-    "date": "2022-06-15",
-    "venue": "Dhaka, Bangladesh",
-    "description": "A night of pure thrash metal aggression. Karmant headlined this explosive event with tracks from Riot in Uniform.",
-    "thumbnail": "/images/news/perpetual_suffering.jpg",
-    "videos": [],
-    "photos": [
+    "title": "Combat Terror Vol.1",
+    "date": "2021-10-08",
+    "venue": "Muslim Institute, Mymensingh, Dhaka",
+    "description": "Karmant participated in Combat Terror Vol.1, delivering an intense thrash metal performance that showcased the band's aggressive sound and technical precision.",
+    "thumbnail": "/images/news/combat terror.jpg",
+    "videos": [
       {
-        "src": "/images/news/perpetual_suffering.jpg",
-        "alt": "Karmant at Thrash Metal Night"
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/zE0GRrP8jws",
+        "type": "youtube"
       }
-    ]
+    ],
+    "photos": []
   },
   {
     "id": "show-3",
-    "title": "Metal Fest Bangladesh",
-    "date": "2023-03-20",
-    "venue": "Dhaka, Bangladesh",
-    "description": "Karmant performed at the annual Metal Fest, sharing the stage with other prominent metal bands from Bangladesh.",
-    "thumbnail": "/images/news/perpetual_suffering.jpg",
-    "videos": [],
-    "photos": [
+    "title": "Butchered Beyond Belief",
+    "date": "2021-10-12",
+    "venue": "The Marketplace, Birulia, Dhaka, Bangladesh",
+    "description": "Karmant delivered a brutal performance at Butchered Beyond Belief, showcasing their aggressive thrash metal sound and raw energy.",
+    "thumbnail": "/images/news/butchered.jpg",
+    "videos": [
       {
-        "src": "/images/news/perpetual_suffering.jpg",
-        "alt": "Karmant at Metal Fest Bangladesh"
+        "title": "Video 1",
+        "url": "https://www.youtube.com/embed/tvvIR2Fh3bw",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 2",
+        "url": "https://www.youtube.com/embed/BEYgcwHd-YA",
+        "type": "youtube"
       }
-    ]
+    ],
+    "photos": []
   },
   {
     "id": "show-4",
-    "title": "Underground Metal Showcase",
-    "date": "2023-09-10",
-    "venue": "Dhaka, Bangladesh",
-    "description": "An intense underground showcase featuring Karmant's raw energy and technical prowess.",
-    "thumbnail": "/images/news/perpetual_suffering.jpg",
+    "title": "Summoning The Eternal Wrath 2021",
+    "date": "2021-12-10",
+    "venue": "The Marketplace, Birulia, Dhaka, Bangladesh",
+    "description": "Karmant brought ultimate decimation to Summoning The Eternal Wrath 2021, delivering a powerful thrash metal performance that showcased the band's aggressive sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Summoning the eternal wrath/stew11.jpg",
     "videos": [],
+    "photos": []
+  },
+  {
+    "id": "show-5",
+    "title": "Tribute to Legends 2022",
+    "date": "2022-02-25",
+    "venue": "Liberation War Museum, Agargaon, Dhaka, Bangladesh",
+    "description": "Karmant paid tribute to the mighty Violator from Central-West of Brazil at Tribute to Legends 2022, delivering a powerful performance honoring metal legends.",
+    "thumbnail": "/images/Media/Shows/Tribute to legends/tribute to.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/DjHe5DwBvXc",
+        "type": "youtube"
+      }
+    ],
     "photos": [
       {
-        "src": "/images/news/perpetual_suffering.jpg",
-        "alt": "Karmant at Underground Metal Showcase"
+        "src": "/images/Media/Shows/Tribute to legends/tbl1.jpg",
+        "alt": "Tribute to Legends 2022 Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl2.jpg",
+        "alt": "Tribute to Legends 2022 Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl3.jpg",
+        "alt": "Tribute to Legends 2022 Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl4.jpg",
+        "alt": "Tribute to Legends 2022 Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl5.jpg",
+        "alt": "Tribute to Legends 2022 Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl6.jpg",
+        "alt": "Tribute to Legends 2022 Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl7.jpg",
+        "alt": "Tribute to Legends 2022 Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl10.jpg",
+        "alt": "Tribute to Legends 2022 Photo 8"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tbl12.jpg",
+        "alt": "Tribute to Legends 2022 Photo 9"
+      },
+      {
+        "src": "/images/Media/Shows/Tribute to legends/tl8.jpg",
+        "alt": "Tribute to Legends 2022 Photo 10"
       }
     ]
   },
   {
-    "id": "show-5",
-    "title": "New Year Metal Bash",
-    "date": "2024-01-01",
-    "venue": "Dhaka, Bangladesh",
-    "description": "Karmant kicked off 2024 with a thunderous performance, bringing thrash metal to the new year celebration.",
-    "thumbnail": "/images/news/perpetual_suffering.jpg",
-    "videos": [],
+    "id": "show-6",
+    "title": "Fatal Conchairto",
+    "date": "2022-05-06",
+    "venue": "The Marketplace (3rd Space), Birulia, Dhaka, Bangladesh",
+    "description": "Karmant united for thrash at Fatal Conchairto, delivering an electrifying performance that showcased the band's aggressive sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Fatal Con/fatal con.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/cbu3PM63kBA",
+        "type": "youtube"
+      }
+    ],
     "photos": [
       {
-        "src": "/images/news/perpetual_suffering.jpg",
-        "alt": "Karmant at New Year Metal Bash"
+        "src": "/images/Media/Shows/Fatal Con/fc1.jpg",
+        "alt": "Fatal Con Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc4.jpg",
+        "alt": "Fatal Con Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc5.jpg",
+        "alt": "Fatal Con Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc6.jpg",
+        "alt": "Fatal Con Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc7.jpg",
+        "alt": "Fatal Con Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc8.jpg",
+        "alt": "Fatal Con Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc9.jpg",
+        "alt": "Fatal Con Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc11.jpg",
+        "alt": "Fatal Con Photo 8"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc12.jpg",
+        "alt": "Fatal Con Photo 9"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc13.jpg",
+        "alt": "Fatal Con Photo 10"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc15.jpg",
+        "alt": "Fatal Con Photo 11"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc16.jpg",
+        "alt": "Fatal Con Photo 12"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc40.jpg",
+        "alt": "Fatal Con Photo 13"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc66.jpg",
+        "alt": "Fatal Con Photo 14"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc133.jpg",
+        "alt": "Fatal Con Photo 15"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc166.jpg",
+        "alt": "Fatal Con Photo 16"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc344.jpg",
+        "alt": "Fatal Con Photo 17"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc545.jpg",
+        "alt": "Fatal Con Photo 18"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc4524.jpg",
+        "alt": "Fatal Con Photo 19"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc6563.jpg",
+        "alt": "Fatal Con Photo 20"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc12321.jpg",
+        "alt": "Fatal Con Photo 21"
+      },
+      {
+        "src": "/images/Media/Shows/Fatal Con/fc34524.jpg",
+        "alt": "Fatal Con Photo 22"
       }
     ]
+  },
+  {
+    "id": "show-7",
+    "title": "Sick Tour II",
+    "date": "2022-07-03",
+    "venue": "TopCat CCU, Kolkata, India",
+    "description": "Karmant made their first appearance in India at Sick Tour II (Kolkata Extreme Metal Fest), delivering an electrifying thrash metal performance that showcased the band's aggressive sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Sick Tour/sick tour 2.jpg",
+    "videos": [],
+    "photos": []
+  },
+  {
+    "id": "show-8",
+    "title": "Warm Up Sirajganj",
+    "date": "2022-07-14",
+    "venue": "Monsur Ali Auditorium, Sirajgonj, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Warm Up Sirajganj, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/warmup Sirazganj.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/SH9OZhkVScg",
+        "type": "youtube"
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "show-9",
+    "title": "Rock Fest 3.0",
+    "date": "2022-07-29",
+    "venue": "Barishal Shilpakala Academy, Barishal, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Rock Fest 3.0, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/rock fest barisal/rfb.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/GDdLxf2dhVs",
+        "type": "youtube"
+      }
+    ],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb1'.jpg",
+        "alt": "Rock Fest 3.0 Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb2.jpg",
+        "alt": "Rock Fest 3.0 Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb3.jpg",
+        "alt": "Rock Fest 3.0 Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb4.jpg",
+        "alt": "Rock Fest 3.0 Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb5.jpg",
+        "alt": "Rock Fest 3.0 Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb6.jpg",
+        "alt": "Rock Fest 3.0 Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb7.jpg",
+        "alt": "Rock Fest 3.0 Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb8.jpg",
+        "alt": "Rock Fest 3.0 Photo 8"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb9.jpg",
+        "alt": "Rock Fest 3.0 Photo 9"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb10.jpg",
+        "alt": "Rock Fest 3.0 Photo 10"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb11.jpg",
+        "alt": "Rock Fest 3.0 Photo 11"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb12.jpg",
+        "alt": "Rock Fest 3.0 Photo 12"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb44.jpg",
+        "alt": "Rock Fest 3.0 Photo 13"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb77.jpg",
+        "alt": "Rock Fest 3.0 Photo 14"
+      },
+      {
+        "src": "/images/Media/Shows/rock fest barisal/rfb88.jpg",
+        "alt": "Rock Fest 3.0 Photo 15"
+      }
+    ]
+  },
+  {
+    "id": "show-10",
+    "title": "20 years celebration of BUCuC",
+    "date": "2022-08-23",
+    "venue": "Brac University, Dhaka, Bangladesh",
+    "description": "Karmant performed at the 20 years celebration of BUCuC at BRAC University, delivering an electrifying thrash metal performance that showcased the band's aggressive sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/20 years of cuc/cuc.jpg",
+    "videos": [],
+    "photos": []
   }
 ]
