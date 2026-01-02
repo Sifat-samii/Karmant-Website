@@ -11,6 +11,8 @@ export interface NewsPost {
   excerpt: string
   cover: string
   content: string
+  externalLink?: string
+  videoUrl?: string
 }
 
 export function getAllNewsPosts(): NewsPost[] {
@@ -33,6 +35,8 @@ export function getAllNewsPosts(): NewsPost[] {
         excerpt: data.excerpt,
         cover: data.cover,
         content,
+        externalLink: data.externalLink || undefined,
+        videoUrl: data.videoUrl || undefined,
       }
     })
 
@@ -58,6 +62,8 @@ export function getNewsPostBySlug(slug: string): NewsPost | null {
     excerpt: data.excerpt,
     cover: data.cover,
     content,
+    externalLink: data.externalLink || undefined,
+    videoUrl: data.videoUrl || undefined,
   }
 }
 

@@ -20,7 +20,7 @@ const merchItems = [
     name: 'Riot In Uniform T-Shirt',
     image: '/images/merch/tshirt2.jpg',
     description: 'Riot In Uniform EP t-shirt',
-    buyLink: 'https://heavymetaltshirtbd.com/shop?page=1&query=',
+    buyLink: 'https://www.facebook.com/photo?fbid=2148578651956124&set=a.256618244485517',
     buttonText: 'Buy',
   },
   {

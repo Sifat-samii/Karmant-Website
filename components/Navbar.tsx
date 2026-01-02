@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -17,19 +17,32 @@ const CloseIcon = () => (
   </svg>
 )
 
+const ChevronDownIcon = () => (
+  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+  </svg>
+)
+
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/news', label: 'News' },
   { href: '/community', label: 'Community' },
-  { href: '/media', label: 'Media' },
   { href: '/band', label: 'Band' },
   { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },
 ]
 
+const mediaSubLinks = [
+  { href: '/media/shows', label: 'Shows' },
+  { href: '/media/videos', label: 'Videos' },
+  { href: '/media/photos', label: 'Photos' },
+]
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMediaOpen, setIsMediaOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const mediaDropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,6 +51,23 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mediaDropdownRef.current && !mediaDropdownRef.current.contains(event.target as Node)) {
+        setIsMediaOpen(false)
+      }
+    }
+
+    if (isMediaOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMediaOpen])
 
   return (
     <nav
@@ -71,6 +101,45 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-metal-red transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+            
+            {/* Media Dropdown */}
+            <div className="relative" ref={mediaDropdownRef}>
+              <button
+                onClick={() => setIsMediaOpen(!isMediaOpen)}
+                className="text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group flex items-center gap-1"
+                style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+              >
+                Media
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-metal-red transition-all duration-300 group-hover:w-full" />
+                <span className={`transition-transform duration-200 ${isMediaOpen ? 'rotate-180' : ''}`}>
+                  <ChevronDownIcon />
+                </span>
+              </button>
+
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isMediaOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-48 bg-metal-darker border-2 border-metal-gray shadow-lg z-50"
+                  >
+                    {mediaSubLinks.map((sublink) => (
+                      <Link
+                        key={sublink.href}
+                        href={sublink.href}
+                        className="block px-4 py-2 text-metal-light hover:bg-metal-red hover:text-white transition-colors duration-200 font-bold uppercase text-xs tracking-wider"
+                        onClick={() => setIsMediaOpen(false)}
+                      >
+                        {sublink.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,6 +174,45 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Media Dropdown for Mobile */}
+              <div>
+                <button
+                  onClick={() => setIsMediaOpen(!isMediaOpen)}
+                  className="w-full flex items-center justify-between text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider"
+                  style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                >
+                  Media
+                  <span className={`transition-transform duration-200 ${isMediaOpen ? 'rotate-180' : ''}`}>
+                    <ChevronDownIcon />
+                  </span>
+                </button>
+                
+                <AnimatePresence>
+                  {isMediaOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 mt-2 space-y-2 border-l-2 border-metal-gray"
+                    >
+                      {mediaSubLinks.map((sublink) => (
+                        <Link
+                          key={sublink.href}
+                          href={sublink.href}
+                          className="block text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-xs tracking-wider"
+                          onClick={() => {
+                            setIsOpen(false)
+                            setIsMediaOpen(false)
+                          }}
+                        >
+                          {sublink.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
           </motion.div>
         )}

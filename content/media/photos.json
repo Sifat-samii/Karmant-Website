@@ -1,0 +1,16 @@
+[
+  {
+    "id": "photo-1",
+    "title": "Perpetual Suffering Event",
+    "category": "show",
+    "date": "2021-01-30",
+    "description": "Photos from our performance at Perpetual Suffering",
+    "photos": [
+      {
+        "src": "/images/news/perpetual_suffering.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      }
+    ]
+  }
+]
+

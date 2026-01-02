@@ -1,71 +1,136 @@
 'use client'
 
 import { useState } from 'react'
-import ImageWithFallback from '@/components/ImageWithFallback'
+import Image from 'next/image'
 
-// Placeholder photo data - replace with actual photos
-const photos = [
-  { id: '1', src: '/images/photos/photo-1.jpg', alt: 'Live performance' },
-  { id: '2', src: '/images/photos/photo-2.jpg', alt: 'Band photo' },
-  { id: '3', src: '/images/photos/photo-3.jpg', alt: 'Studio session' },
-  { id: '4', src: '/images/photos/photo-4.jpg', alt: 'Backstage' },
-  { id: '5', src: '/images/photos/photo-5.jpg', alt: 'Concert' },
-  { id: '6', src: '/images/photos/photo-6.jpg', alt: 'Band members' },
-]
+interface Photo {
+  src: string
+  alt: string
+}
 
-export default function PhotoGallery() {
-  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null)
+interface PhotoGalleryProps {
+  photos: Photo[]
+}
 
-  const selectedPhotoData = photos.find((p) => p.id === selectedPhoto)
+export default function PhotoGallery({ photos }: PhotoGalleryProps) {
+  const [selectedPhoto, setSelectedPhoto] = useState<number | null>(null)
+
+  const openModal = (index: number) => {
+    setSelectedPhoto(index)
+  }
+
+  const closeModal = () => {
+    setSelectedPhoto(null)
+  }
+
+  const nextPhoto = () => {
+    if (selectedPhoto !== null && selectedPhoto < photos.length - 1) {
+      setSelectedPhoto(selectedPhoto + 1)
+    }
+  }
+
+  const prevPhoto = () => {
+    if (selectedPhoto !== null && selectedPhoto > 0) {
+      setSelectedPhoto(selectedPhoto - 1)
+    }
+  }
 
   return (
-    <section>
-      <h2 className="text-3xl font-bold text-metal-red mb-8 text-center">Photos</h2>
-      
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {photos.map((photo) => (
-          <button
-            key={photo.id}
-            onClick={() => setSelectedPhoto(photo.id)}
-            className="relative aspect-square overflow-hidden rounded-lg group"
-          >
-            <ImageWithFallback
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              className="object-cover group-hover:scale-110 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-          </button>
-        ))}
+    <>
+      <div className="text-center">
+        <h2 className="text-2xl font-bold text-metal-red mb-8 uppercase tracking-wider">
+          Photos
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {photos.map((photo, idx) => (
+            <div
+              key={idx}
+              onClick={() => openModal(idx)}
+              className="relative aspect-square overflow-hidden bg-metal-darker border border-metal-gray/50 hover:border-metal-red transition-all duration-300 group cursor-pointer"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Lightbox */}
-      {selectedPhoto && selectedPhotoData && (
+      {/* Modal */}
+      {selectedPhoto !== null && (
         <div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedPhoto(null)}
+          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+          onClick={closeModal}
         >
+          {/* Close Button */}
           <button
-            onClick={() => setSelectedPhoto(null)}
+            onClick={closeModal}
             className="absolute top-4 right-4 text-white hover:text-metal-red transition-colors z-10"
-            aria-label="Close photo"
+            aria-label="Close"
           >
-            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-          <div className="relative max-w-6xl max-h-[90vh] w-full h-full" onClick={(e) => e.stopPropagation()}>
-            <ImageWithFallback
-              src={selectedPhotoData.src}
-              alt={selectedPhotoData.alt}
+
+          {/* Previous Button */}
+          {selectedPhoto > 0 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                prevPhoto()
+              }}
+              className="absolute left-4 text-white hover:text-metal-red transition-colors z-10"
+              aria-label="Previous"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Next Button */}
+          {selectedPhoto < photos.length - 1 && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                nextPhoto()
+              }}
+              className="absolute right-4 text-white hover:text-metal-red transition-colors z-10"
+              aria-label="Next"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          )}
+
+          {/* Image */}
+          <div
+            className="relative max-w-7xl max-h-[90vh] w-full h-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={photos[selectedPhoto].src}
+              alt={photos[selectedPhoto].alt}
               fill
               className="object-contain"
+              sizes="100vw"
+              priority
             />
+          </div>
+
+          {/* Photo Counter */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm">
+            {selectedPhoto + 1} / {photos.length}
           </div>
         </div>
       )}
-    </section>
+    </>
   )
 }
-

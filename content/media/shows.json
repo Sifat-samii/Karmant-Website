@@ -1,0 +1,111 @@
+[
+  {
+    "id": "show-1",
+    "title": "Perpetual Suffering 2021",
+    "date": "2021-02-19",
+    "venue": "Player's club, jfp, dhaka, bangladesh",
+    "description": "Karmant brings new wave thrash metal to Perpetual Suffering! An electrifying performance showcasing our aggressive sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Perpetual Suffering 2021/perpetual_suffering.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.facebook.com/share/v/1AfqPQKh5M/",
+        "type": "facebook"
+      }
+    ],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ph3.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ph4.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ph5.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/pp1.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/pp2.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ps1.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ps3.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      },
+      {
+        "src": "/images/Media/Shows/Perpetual Suffering 2021/ps5.jpg",
+        "alt": "Karmant at Perpetual Suffering"
+      }
+    ]
+  },
+  {
+    "id": "show-2",
+    "title": "Thrash Metal Night",
+    "date": "2022-06-15",
+    "venue": "Dhaka, Bangladesh",
+    "description": "A night of pure thrash metal aggression. Karmant headlined this explosive event with tracks from Riot in Uniform.",
+    "thumbnail": "/images/news/perpetual_suffering.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/news/perpetual_suffering.jpg",
+        "alt": "Karmant at Thrash Metal Night"
+      }
+    ]
+  },
+  {
+    "id": "show-3",
+    "title": "Metal Fest Bangladesh",
+    "date": "2023-03-20",
+    "venue": "Dhaka, Bangladesh",
+    "description": "Karmant performed at the annual Metal Fest, sharing the stage with other prominent metal bands from Bangladesh.",
+    "thumbnail": "/images/news/perpetual_suffering.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/news/perpetual_suffering.jpg",
+        "alt": "Karmant at Metal Fest Bangladesh"
+      }
+    ]
+  },
+  {
+    "id": "show-4",
+    "title": "Underground Metal Showcase",
+    "date": "2023-09-10",
+    "venue": "Dhaka, Bangladesh",
+    "description": "An intense underground showcase featuring Karmant's raw energy and technical prowess.",
+    "thumbnail": "/images/news/perpetual_suffering.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/news/perpetual_suffering.jpg",
+        "alt": "Karmant at Underground Metal Showcase"
+      }
+    ]
+  },
+  {
+    "id": "show-5",
+    "title": "New Year Metal Bash",
+    "date": "2024-01-01",
+    "venue": "Dhaka, Bangladesh",
+    "description": "Karmant kicked off 2024 with a thunderous performance, bringing thrash metal to the new year celebration.",
+    "thumbnail": "/images/news/perpetual_suffering.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/news/perpetual_suffering.jpg",
+        "alt": "Karmant at New Year Metal Bash"
+      }
+    ]
+  }
+]
