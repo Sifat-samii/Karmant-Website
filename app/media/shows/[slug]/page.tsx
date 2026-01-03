@@ -208,6 +208,71 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
                   View Event
                 </a>
               )}
+              {show.id === 'show-11' && (
+                <a
+                  href="https://fb.me/e/7dLdCyXOg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-12' && (
+                <a
+                  href="https://fb.me/e/6boUVXJry"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-13' && (
+                <a
+                  href="https://fb.me/e/17YVYGg3u"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-14' && (
+                <a
+                  href="https://fb.me/e/6xfnBLxlx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-15' && (
+                <a
+                  href="https://fb.me/e/4gpPls1KT"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
             </div>
             <p className="text-metal-red font-bold uppercase text-lg tracking-wider flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,7 +292,7 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
         </div>
 
         {/* Video Section */}
-        {(show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-8' || show.id === 'show-9') && (
+        {(show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-8' || show.id === 'show-9' || show.id === 'show-14') && (
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
               {show.videos && show.videos.length > 1 ? 'Videos' : 'Video'}
@@ -298,6 +363,15 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
                     <iframe
                       src="https://www.youtube.com/embed/GDdLxf2dhVs"
                       title="Rock Fest 3.0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                    />
+                  )}
+                  {show.id === 'show-14' && (
+                    <iframe
+                      src="https://www.youtube.com/embed/3XjTYmYPniw"
+                      title="মাইর -Pit (Reinstate)"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="absolute top-0 left-0 w-full h-full"
