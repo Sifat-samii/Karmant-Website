@@ -115,45 +115,84 @@ function MusicPageContent() {
   }, [sortedReleases])
 
   return (
-    <div className="pt-20 pb-20">
-      {/* Header */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 overflow-hidden mb-4 min-h-[300px]">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-no-repeat"
-          style={{
-            backgroundImage: `url('/images/Desolate%20futuristic%20wasteland%20and%20survivors.png')`,
-            backgroundPosition: 'center 75%',
-            opacity: 0.3,
-          }}
-        />
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-        {/* Gradient - dark to black from top to bottom */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 85%, black 100%)',
-          }}
-        />
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto text-center pt-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-4 font-display uppercase tracking-tight">
-            Discography
-          </h1>
+    <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen relative">
+      {/* Background Image - Fixed and Full Page */}
+      <div 
+        className="fixed inset-0 bg-top bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: `url('/images/Desolate%20futuristic%20wasteland%20and%20survivors.png')`,
+          backgroundPosition: 'center top',
+          backgroundSize: 'cover',
+          zIndex: 0,
+        }}
+      />
+      {/* Dark Overlay */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          backgroundColor: 'rgba(0,0,0,0.75)',
+          zIndex: 1,
+        }}
+      />
+      {/* Vignette Effect - Radial fadeout from edges */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 85%, rgba(0,0,0,0.95) 100%)',
+          zIndex: 2,
+        }}
+      />
+      {/* Horizontal Fadeout - Dissolve sides into black */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.8) 100%)',
+          zIndex: 3,
+        }}
+      />
+      {/* Vertical Fadeout - Dissolve from middle towards bottom */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.95) 95%, black 100%)',
+          zIndex: 4,
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative" style={{ zIndex: 10 }}>
+        {/* Back to Home - Top */}
+        <div className="mb-8">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
         </div>
-      </section>
+
+        {/* Header */}
+        <section className="relative pb-16 overflow-hidden mb-0 min-h-[300px]">
+          {/* Content */}
+          <div className="relative z-10 max-w-7xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-0 font-display uppercase tracking-tight">
+              Discography
+            </h1>
+          </div>
+        </section>
 
       {/* Tabs Section */}
-      <section className="px-4 sm:px-6 lg:px-8">
+      <section className="-mt-24 relative" style={{ zIndex: 10 }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap justify-center gap-2 pb-4">
             {tabs.map((tab) => (
               <button
                 key={tab}
+                type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 ${
+                className={`flex items-center gap-2 px-6 py-3 text-sm font-bold uppercase tracking-wider transition-all duration-200 relative z-10 ${
                   activeTab === tab
                     ? 'bg-metal-red text-white hover:bg-red-600'
                     : 'bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white'
@@ -170,7 +209,7 @@ function MusicPageContent() {
 
       {/* All Content */}
       {activeTab === 'All' && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {sortedReleases.map((release, index) => (
@@ -222,7 +261,7 @@ function MusicPageContent() {
 
       {/* Singles Content */}
       {activeTab === 'Singles' && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {singles.map((release, index) => (
@@ -260,7 +299,7 @@ function MusicPageContent() {
 
       {/* EPs Content */}
       {activeTab === "EPs" && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {eps.map((release, index) => (
@@ -299,7 +338,7 @@ function MusicPageContent() {
 
       {/* Albums Content */}
       {activeTab === 'Albums' && (
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap justify-center gap-8">
               {albums.map((album, index) => (
@@ -339,6 +378,20 @@ function MusicPageContent() {
           </div>
         </section>
       )}
+
+      {/* Back to Home - Bottom */}
+      <div className="mt-16 flex justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }

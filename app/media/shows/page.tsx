@@ -25,6 +25,91 @@ export default function ShowsPage() {
   // Always show all shows (no filtering)
   const filteredShows = sortedShows
 
+  // Scroll to show card when returning from individual show page
+  useEffect(() => {
+    const scrollToShow = () => {
+      // Check URL params for show ID
+      const urlParams = new URLSearchParams(window.location.search)
+      const showId = urlParams.get('scrollTo')
+      
+      if (showId) {
+        // Remove the parameter from URL
+        window.history.replaceState({}, '', window.location.pathname)
+        
+        // Find and scroll to the show card
+        const scrollToElement = () => {
+          // Try to find by ID first, then by data attribute
+          let showElement = document.getElementById(showId)
+          if (!showElement) {
+            showElement = document.querySelector(`[data-show-id="${showId}"]`) as HTMLElement
+          }
+          
+          if (showElement) {
+            // Check if element is actually rendered and has dimensions
+            const rect = showElement.getBoundingClientRect()
+            if (rect.width === 0 && rect.height === 0) {
+              return false // Element not yet rendered
+            }
+
+            // Use requestAnimationFrame for better timing
+            requestAnimationFrame(() => {
+              // Calculate accurate offset accounting for fixed header
+              const headerOffset = 100
+              const elementTop = showElement.offsetTop
+              const offsetPosition = elementTop - headerOffset
+              
+              // Use scrollIntoView for more reliable scrolling
+              showElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
+              })
+              
+              // Fine-tune with manual scroll for precise positioning
+              setTimeout(() => {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop
+                const targetScroll = elementTop - headerOffset
+                
+                if (Math.abs(currentScroll - targetScroll) > 10) {
+                  window.scrollTo({
+                    top: Math.max(0, targetScroll),
+                    behavior: 'smooth'
+                  })
+                }
+              }, 100)
+            })
+            
+            return true
+          }
+          return false
+        }
+
+        // Wait for next frame to ensure DOM is updated
+        requestAnimationFrame(() => {
+          // Try scrolling with multiple retries and increasing delays
+          const attemptScroll = (retries = 5, delay = 100) => {
+            if (scrollToElement()) {
+              return
+            }
+            if (retries > 0) {
+              setTimeout(() => attemptScroll(retries - 1, delay + 50), delay)
+            }
+          }
+
+          // Start with initial delay to ensure DOM is ready
+          setTimeout(() => {
+            if (!scrollToElement()) {
+              attemptScroll()
+            }
+          }, 100)
+        })
+      }
+    }
+
+    // Small delay to ensure DOM is ready
+    setTimeout(scrollToShow, 100)
+  }, [])
+
   // Track scroll position to show/hide scroll-to-top button
   useEffect(() => {
     const handleScroll = () => {
@@ -45,32 +130,71 @@ export default function ShowsPage() {
     setSelectedYear(null) // Reset selected year when scrolling to top
   }
 
-  // Scroll to year's shows when year is selected
+  // Scroll to year's shows when year is selected - scroll to latest show of that year
   useEffect(() => {
     if (selectedYear) {
-      const scrollToElement = () => {
+      const scrollToLatestShowOfYear = () => {
+        // Find the element with year-${selectedYear} ID (first/latest show of that year)
         const yearElement = document.getElementById(`year-${selectedYear}`)
         if (yearElement) {
-          const elementPosition = yearElement.getBoundingClientRect().top + window.pageYOffset
-          const offsetPosition = elementPosition - 150 // Account for header and spacing
-          
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
+          // Check if element is actually rendered and has dimensions
+          const rect = yearElement.getBoundingClientRect()
+          if (rect.width === 0 && rect.height === 0) {
+            return false // Element not yet rendered
+          }
+
+          // Use requestAnimationFrame for better timing
+          requestAnimationFrame(() => {
+            // Calculate accurate offset accounting for fixed header
+            const headerOffset = 100
+            const elementTop = yearElement.offsetTop
+            const offsetPosition = elementTop - headerOffset
+            
+            // Use scrollIntoView for more reliable scrolling
+            yearElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'nearest'
+            })
+            
+            // Fine-tune with manual scroll for precise positioning
+            setTimeout(() => {
+              const currentScroll = window.pageYOffset || document.documentElement.scrollTop
+              const targetScroll = elementTop - headerOffset
+              
+              if (Math.abs(currentScroll - targetScroll) > 10) {
+                window.scrollTo({
+                  top: Math.max(0, targetScroll),
+                  behavior: 'smooth'
+                })
+              }
+            }, 100)
           })
+          
           return true
         }
         return false
       }
 
-      // Try immediately, then with delays if needed
-      if (!scrollToElement()) {
+      // Wait for next frame to ensure DOM is updated
+      requestAnimationFrame(() => {
+        // Try scrolling with multiple retries and increasing delays
+        const attemptScroll = (retries = 5, delay = 100) => {
+          if (scrollToLatestShowOfYear()) {
+            return
+          }
+          if (retries > 0) {
+            setTimeout(() => attemptScroll(retries - 1, delay + 50), delay)
+          }
+        }
+
+        // Start with initial delay to ensure DOM is ready
         setTimeout(() => {
-          if (!scrollToElement()) {
-            setTimeout(scrollToElement, 300)
+          if (!scrollToLatestShowOfYear()) {
+            attemptScroll()
           }
         }, 100)
-      }
+      })
     }
   }, [selectedYear])
 
@@ -186,7 +310,7 @@ export default function ShowsPage() {
         ) : (
           <div className="relative">
             {/* Central Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-metal-red via-metal-red/50 to-transparent hidden md:block" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full hidden md:block" style={{ width: '2px', backgroundColor: '#dc2626' }} />
 
             {/* Timeline Items */}
             <div className="space-y-0">
@@ -225,8 +349,9 @@ export default function ShowsPage() {
                   return (
                     <div 
                       key={show.id} 
-                      id={isFirstOfYear ? `year-${year}` : undefined}
-                      className="relative mb-12 md:mb-16"
+                      id={isFirstOfYear ? `year-${year}` : show.id}
+                      data-show-id={show.id}
+                      className="relative mb-12 md:mb-16 scroll-mt-32"
                     >
                       {/* Timeline Node */}
                       <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-metal-red rounded-full border-4 border-metal-darker z-10 hidden md:block" style={{ top: '0.5rem' }} />

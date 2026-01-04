@@ -36,13 +36,13 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
     <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Back Button */}
-        <div className="mb-8">
+        <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
           <Link 
-            href="/media/shows"
-            className="inline-flex items-center gap-2 text-metal-red hover:text-metal-light transition-colors text-sm uppercase tracking-wider"
+            href={`/media/shows?scrollTo=${show.id}`}
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to Shows
           </Link>
@@ -50,15 +50,15 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
 
         {/* Show Poster */}
         <div className="mb-12">
-          <div className="relative w-full overflow-hidden bg-metal-darker border-2 border-metal-gray">
+          <div className={`relative w-full overflow-hidden bg-metal-darker border-2 border-metal-gray ${show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-24' ? 'max-w-2xl mx-auto' : ''}`}>
             <div className="relative w-full" style={{ aspectRatio: 'auto' }}>
               <Image
                 src={show.thumbnail}
                 alt={show.title}
-                width={1200}
-                height={800}
+                width={show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-24' ? 800 : 1200}
+                height={show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-24' ? 600 : 800}
                 className="w-full h-auto object-contain"
-                sizes="100vw"
+                sizes={show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-24' ? "(max-width: 768px) 100vw, 50vw" : "100vw"}
                 priority
               />
             </div>
@@ -405,28 +405,64 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
         </div>
 
         {/* Video Section */}
-        {(show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-8' || show.id === 'show-9' || show.id === 'show-14' || show.id === 'show-16' || show.id === 'show-20' || show.id === 'show-21') && (
+        {show.videos && show.videos.length > 0 && (
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
-              {show.videos && show.videos.length > 1 ? 'Videos' : 'Video'}
+              {show.videos.length > 1 ? 'Videos' : 'Video'}
             </h2>
             <div className="max-w-6xl mx-auto">
-              {(show.id === 'show-3' || show.id === 'show-20') && show.videos && show.videos.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {show.videos.map((video: any, index: number) => (
-                    <div key={index} className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
-                      <iframe
-                        src={video.url}
-                        title={`${show.title} - ${video.title || `Video ${index + 1}`}`}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full"
-                      />
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
+              <div className={`grid grid-cols-1 ${show.videos.length > 1 ? 'md:grid-cols-2' : ''} gap-6`}>
+                {show.videos.map((video: any, index: number) => (
+                  <div key={index} className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
+                    <iframe
+                      src={video.url}
+                      title={`${show.title} - ${video.title || `Video ${index + 1}`}`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* External Video Links Section */}
+        {(show as any).externalVideos && (show as any).externalVideos.length > 0 && (
+          <div className="text-center mb-16">
+            <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
+              {show.id === 'show-15' ? 'Video' : 'More Videos'}
+            </h2>
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-wrap justify-center gap-4">
+                {(show as any).externalVideos.map((video: any, index: number) => (
+                  <a
+                    key={index}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-black/40 border-2 border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-6 py-3 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    {video.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Legacy Video Section for shows without videos array */}
+        {(!show.videos || show.videos.length === 0) && (show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-4' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-9' || show.id === 'show-14' || show.id === 'show-16' || show.id === 'show-20' || show.id === 'show-21') && (
+          <div className="text-center mb-16">
+            <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
+              Video
+            </h2>
+            <div className="max-w-6xl mx-auto">
+              <div className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
                   {show.id === 'show-1' && (
                     <iframe
                       src="https://www.youtube.com/embed/N5gY-HkEJIo"
@@ -458,15 +494,6 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
                     <iframe
                       src="https://www.youtube.com/embed/cbu3PM63kBA"
                       title="Fatal Conchairto"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-8' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/SH9OZhkVScg"
-                      title="Warm Up Sirajganj"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="absolute top-0 left-0 w-full h-full"
@@ -520,13 +547,13 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
         )}
 
         {/* Back Button - Bottom */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 flex items-center justify-center">
           <Link 
-            href="/media/shows"
-            className="inline-flex items-center gap-2 text-metal-red hover:text-metal-light transition-colors text-sm uppercase tracking-wider"
+            href={`/media/shows?scrollTo=${show.id}`}
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             Back to Shows
           </Link>

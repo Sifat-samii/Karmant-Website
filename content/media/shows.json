@@ -9,8 +9,8 @@
     "videos": [
       {
         "title": "Full Set",
-        "url": "https://www.facebook.com/share/v/1AfqPQKh5M/",
-        "type": "facebook"
+        "url": "https://www.youtube.com/embed/N5gY-HkEJIo",
+        "type": "youtube"
       }
     ],
     "photos": [
@@ -70,7 +70,7 @@
     "date": "2021-10-12",
     "venue": "The Marketplace, Birulia, Dhaka, Bangladesh",
     "description": "Butchered Beyond Belief at The Marketplace in Birulia saw Karmant deliver an intense performance that lived up to the event's name. The show featured the band's raw, unrelenting thrash metal energy, creating an unforgettable experience for the metal community in Dhaka.",
-    "thumbnail": "/images/news/butchered.jpg",
+    "thumbnail": "/images/Media/Shows/Butcehred Beyond Belief/butchered1.jpg",
     "videos": [
       {
         "title": "Video 1",
@@ -80,6 +80,16 @@
       {
         "title": "Video 2",
         "url": "https://www.youtube.com/embed/BEYgcwHd-YA",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 3",
+        "url": "https://www.youtube.com/embed/1XUHC3pjZEE",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 4",
+        "url": "https://www.youtube.com/embed/f77YTsoH3f0",
         "type": "youtube"
       }
     ],
@@ -92,7 +102,46 @@
     "venue": "The Marketplace, Birulia, Dhaka, Bangladesh",
     "description": "Karmant brought ultimate decimation to Summoning The Eternal Wrath 2021, delivering a powerful thrash metal performance that showcased the band's aggressive sound and technical precision.",
     "thumbnail": "/images/Media/Shows/Summoning the eternal wrath/stew11.jpg",
-    "videos": [],
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/dfKM-t8o7Hc",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 6",
+        "url": "https://www.youtube.com/embed/eMHqPdtipUs",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 7",
+        "url": "https://www.youtube.com/embed/9BxKr6MZenc",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 8",
+        "url": "https://www.youtube.com/embed/okIe2QYdG3s",
+        "type": "youtube"
+      }
+    ],
+    "externalVideos": [
+      {
+        "title": "Riot in Uniform",
+        "url": "https://youtu.be/ptFGNzfBnbY"
+      },
+      {
+        "title": "Unstoppable Slaughter (Violator Cover)",
+        "url": "https://youtu.be/sR_lR8j2LIc"
+      },
+      {
+        "title": "General Destroyer",
+        "url": "https://youtu.be/lHtKxPCzaJE"
+      },
+      {
+        "title": "Endless Tyrannies (Violator Cover)",
+        "url": "https://youtu.be/nOC4N7sNMy4"
+      }
+    ],
     "photos": []
   },
   {
@@ -163,6 +212,11 @@
       {
         "title": "Full Set",
         "url": "https://www.youtube.com/embed/cbu3PM63kBA",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 2",
+        "url": "https://www.youtube.com/embed/WdzdcnfgD0o",
         "type": "youtube"
       }
     ],
@@ -264,7 +318,13 @@
     "venue": "TopCat CCU, Kolkata, India",
     "description": "Karmant made their first appearance in India at Sick Tour II (Kolkata Extreme Metal Fest), delivering an electrifying thrash metal performance that showcased the band's aggressive sound and technical precision.",
     "thumbnail": "/images/Media/Shows/Sick Tour/sick tour 2.jpg",
-    "videos": [],
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/SH9OZhkVScg",
+        "type": "youtube"
+      }
+    ],
     "photos": []
   },
   {
@@ -274,13 +334,7 @@
     "venue": "Monsur Ali Auditorium, Sirajgonj, Bangladesh",
     "description": "Karmant brought their raw thrash metal energy to Sirajganj for Warm Up, delivering a powerful set that ignited the local metal scene. The performance featured intense riffs and relentless energy that resonated with the passionate audience.",
     "thumbnail": "/images/Media/Shows/warmup Sirazganj.jpg",
-    "videos": [
-      {
-        "title": "Full Set",
-        "url": "https://www.youtube.com/embed/SH9OZhkVScg",
-        "type": "youtube"
-      }
-    ],
+    "videos": [],
     "photos": []
   },
   {
@@ -558,6 +612,12 @@
     "description": "Primeval Anarchy in Chittagong brought Karmant to the port city's metal scene. Performing at the Zilla Shilpokola Academy, the band showcased their raw thrash metal power, connecting with Chittagong's passionate metal community.",
     "thumbnail": "/images/Media/Shows/Primeval anarchy/pa poster.jpg",
     "videos": [],
+    "externalVideos": [
+      {
+        "title": "Full Set",
+        "url": "https://youtu.be/bwE61VKl_jY"
+      }
+    ],
     "photos": []
   },
   {
@@ -678,6 +738,11 @@
       {
         "title": "Full Set",
         "url": "https://www.youtube.com/embed/oqTcyLHjxXA",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 2",
+        "url": "https://www.youtube.com/embed/hC-fHfyQyyc",
         "type": "youtube"
       }
     ],
@@ -807,7 +872,13 @@
     "venue": "Barishal Shilpokola Academy, Barishal, Bangladesh",
     "description": "Rock Fest 4.0 in Barishal saw Karmant return to the coastal city, bringing their thrash metal intensity to the Shilpakala Academy. The performance demonstrated the band's continued commitment to spreading metal culture across Bangladesh's diverse regions.",
     "thumbnail": "/images/Media/Shows/Rock fest 4.0 barisla/Brf Poster.jpg",
-    "videos": [],
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/lzHTLqLnRFM",
+        "type": "youtube"
+      }
+    ],
     "photos": [
       {
         "src": "/images/Media/Shows/Rock fest 4.0 barisla/482248425_1184372690360386_4816400385361772470_n.jpg",
