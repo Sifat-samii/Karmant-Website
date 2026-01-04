@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 import bandData from '@/content/band.json'
 
@@ -9,30 +10,69 @@ export const metadata: Metadata = {
 
 export default function BandPage() {
   return (
-    <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen relative">
+      {/* Background Image - Fixed and Aligned to Top */}
+      <div 
+        className="fixed inset-0 bg-top bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: 'url(/images/dsd.png)',
+          backgroundPosition: 'center top',
+          backgroundSize: 'cover',
+          zIndex: 0,
+        }}
+      />
+      {/* Dark Overlay for Increased Opacity and Darkness */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          backgroundColor: 'rgba(0,0,0,0.75)',
+          zIndex: 1,
+        }}
+      />
+      {/* Vignette Effect - Radial fadeout from edges */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 85%, rgba(0,0,0,0.95) 100%)',
+          zIndex: 2,
+        }}
+      />
+      {/* Horizontal Fadeout - Dissolve sides into black */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.8) 100%)',
+          zIndex: 3,
+        }}
+      />
+      {/* Vertical Fadeout - Dissolve from middle to bottom into black */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.65) 65%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.95) 85%, black 95%, black 100%)',
+          zIndex: 4,
+        }}
+      />
+      
+      <div className="max-w-7xl mx-auto relative" style={{ zIndex: 10 }}>
+        {/* Back to Home */}
+        <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+
         {/* Header */}
-        <div className="relative text-center mb-8 overflow-hidden">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-            style={{
-              backgroundImage: 'url(/images/dsd.png)',
-            }}
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-          {/* Gradient - dark to black from top to bottom */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 85%, black 100%)',
-            }}
-          />
-          
+        <div className="relative text-center mb-2 overflow-hidden">
           {/* Content */}
-          <div className="relative z-10 pt-20 pb-20">
-            <div className="flex justify-center mb-4">
+          <div className="relative z-10 pb-6">
+            <div className="flex justify-center mb-1">
               <Image
                 src="/images/Whitelogo.png"
                 alt="Karmant"
@@ -195,6 +235,19 @@ export default function BandPage() {
             </div>
           </section>
         )}
+
+        {/* Back to Home - Bottom */}
+        <div className="mt-16 flex items-center justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   )

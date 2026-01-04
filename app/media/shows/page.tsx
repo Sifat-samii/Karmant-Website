@@ -102,54 +102,52 @@ export default function ShowsPage() {
 
   return (
     <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen relative">
-      {/* Background Image - Fixed and Centered */}
+      {/* Background Image - Fixed and Aligned to Top */}
       <div 
-        className="fixed inset-0 bg-center bg-no-repeat bg-fixed"
+        className="fixed inset-0 bg-top bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: 'url(/images/artwork%20gpt%20generated%20cropped.png)',
-          backgroundPosition: 'center 55%',
-          backgroundSize: '70%',
+          backgroundImage: 'url(/images/482093493_1177794414351547_208647928897630965_n.jpg)',
+          backgroundPosition: 'center top',
+          backgroundSize: 'cover',
           zIndex: 0,
-        }}
-      />
-      {/* Glass Effect Overlay */}
-      <div 
-        className="fixed inset-0"
-        style={{
-          backdropFilter: 'blur(1px)',
-          WebkitBackdropFilter: 'blur(1px)',
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 50%, rgba(0,0,0,0.1) 100%)',
-          zIndex: 1,
-        }}
-      />
-      {/* Enhanced Vignette Effect */}
-      <div 
-        className="fixed inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.95) 100%)',
-          zIndex: 2,
         }}
       />
       {/* Dark Overlay for Increased Opacity and Darkness */}
       <div 
         className="fixed inset-0"
         style={{
-          backgroundColor: 'rgba(0,0,0,0.65)',
+          backgroundColor: 'rgba(0,0,0,0.75)',
+          zIndex: 1,
+        }}
+      />
+      {/* Vignette Effect - Radial fadeout from edges */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 85%, rgba(0,0,0,0.95) 100%)',
+          zIndex: 2,
+        }}
+      />
+      {/* Horizontal Fadeout - Dissolve sides into black */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.8) 100%)',
           zIndex: 3,
         }}
       />
       
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 10 }}>
-        {/* Back to Media */}
+        {/* Back to Home */}
         <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
           <Link
-            href="/media"
+            href="/"
             className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Media
+            Back to Home
           </Link>
         </div>
 
@@ -328,6 +326,19 @@ export default function ShowsPage() {
             </div>
           </div>
         )}
+
+        {/* Back to Home - Bottom */}
+        <div className="mt-16 flex items-center justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
       </div>
 
       {/* Scroll to Top Button - Thrash Metal Style */}
