@@ -72,6 +72,15 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
             {show.title}
           </h1>
 
+          {/* Cancelled Badge */}
+          {(show as any).cancelled && (
+            <div className="mb-6">
+              <div className="inline-block bg-red-600 text-white px-8 py-4 font-bold uppercase tracking-wider text-lg shadow-xl">
+                CANCELLED
+              </div>
+            </div>
+          )}
+
           {/* Date and Location */}
           <div className="flex flex-col items-center gap-4 mb-8">
             <div className="flex items-center gap-4 flex-wrap justify-center">
@@ -273,6 +282,110 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
                   View Event
                 </a>
               )}
+              {show.id === 'show-16' && (
+                <a
+                  href="https://fb.me/e/37TCvHuba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-17' && (
+                <a
+                  href="https://fb.me/e/c2OzgMHX7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-18' && (
+                <a
+                  href="https://fb.me/e/3SzecGvjV"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-19' && (
+                <a
+                  href="https://fb.me/e/34e1aBffa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-20' && (
+                <a
+                  href="https://fb.me/e/1hNICw0KM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-21' && (
+                <a
+                  href="https://fb.me/e/2uqTqWLay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-22' && (
+                <a
+                  href="https://fb.me/e/3Ho7ohOU9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
+              {show.id === 'show-23' && (
+                <a
+                  href="https://fb.me/e/321x23xEc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black/40 border border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-4 py-2 font-bold uppercase tracking-wider text-sm transition-all duration-200 hover:scale-105"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                  </svg>
+                  View Event
+                </a>
+              )}
             </div>
             <p className="text-metal-red font-bold uppercase text-lg tracking-wider flex items-center gap-2">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -292,13 +405,13 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
         </div>
 
         {/* Video Section */}
-        {(show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-8' || show.id === 'show-9' || show.id === 'show-14') && (
+        {(show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-8' || show.id === 'show-9' || show.id === 'show-14' || show.id === 'show-16' || show.id === 'show-20' || show.id === 'show-21') && (
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
               {show.videos && show.videos.length > 1 ? 'Videos' : 'Video'}
             </h2>
             <div className="max-w-6xl mx-auto">
-              {show.id === 'show-3' && show.videos && show.videos.length > 0 ? (
+              {(show.id === 'show-3' || show.id === 'show-20') && show.videos && show.videos.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {show.videos.map((video: any, index: number) => (
                     <div key={index} className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
@@ -372,6 +485,24 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
                     <iframe
                       src="https://www.youtube.com/embed/3XjTYmYPniw"
                       title="মাইর -Pit (Reinstate)"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                    />
+                  )}
+                  {show.id === 'show-16' && (
+                    <iframe
+                      src="https://www.youtube.com/embed/uBTqZQNTWZM"
+                      title="Resurrection Chant Over Hillside"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute top-0 left-0 w-full h-full"
+                    />
+                  )}
+                  {show.id === 'show-21' && (
+                    <iframe
+                      src="https://www.youtube.com/embed/oqTcyLHjxXA"
+                      title="Bangladesh Thrashfest 2023"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       className="absolute top-0 left-0 w-full h-full"

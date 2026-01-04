@@ -13,6 +13,7 @@ export interface NewsPost {
   content: string
   externalLink?: string
   videoUrl?: string
+  cancelled?: boolean
 }
 
 export function getAllNewsPosts(): NewsPost[] {
@@ -37,6 +38,7 @@ export function getAllNewsPosts(): NewsPost[] {
         content,
         externalLink: data.externalLink || undefined,
         videoUrl: data.videoUrl || undefined,
+        cancelled: data.cancelled || undefined,
       }
     })
 
@@ -64,6 +66,7 @@ export function getNewsPostBySlug(slug: string): NewsPost | null {
     content,
     externalLink: data.externalLink || undefined,
     videoUrl: data.videoUrl || undefined,
+    cancelled: data.cancelled || undefined,
   }
 }
 

@@ -171,6 +171,17 @@ export default function ShowsPage() {
                           className={`w-full md:w-[calc(50%-2rem)] group block ${isEven ? 'md:ml-auto' : 'md:mr-auto'} cursor-pointer`}
                         >
                           <div className="relative overflow-hidden bg-metal-darker border-2 border-metal-gray hover:border-metal-red transition-all duration-300">
+                            {/* Cancelled Banner - Big Ribbon Seal */}
+                            {(show as any).cancelled && (
+                              <div className="absolute top-8 -right-16 z-20 transform rotate-45 shadow-2xl">
+                                <div className="relative bg-red-600 text-white px-24 py-4 font-bold uppercase tracking-wider text-base">
+                                  <div className="absolute -left-3 top-0 bottom-0 w-3 bg-red-700 opacity-80"></div>
+                                  <div className="absolute -right-3 top-0 bottom-0 w-3 bg-red-700 opacity-80"></div>
+                                  <span className="relative z-10">CANCELLED</span>
+                                </div>
+                                <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-transparent border-t-red-700"></div>
+                              </div>
+                            )}
                             {/* Show Thumbnail */}
                             {show.thumbnail && (
                               <div className="relative w-full overflow-hidden bg-metal-darker">

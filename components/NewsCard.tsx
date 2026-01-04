@@ -11,6 +11,7 @@ interface NewsPost {
   cover: string
   externalLink?: string
   videoUrl?: string
+  cancelled?: boolean
 }
 
 interface NewsCardProps {

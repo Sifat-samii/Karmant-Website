@@ -559,5 +559,374 @@
     "thumbnail": "/images/Media/Shows/Primeval anarchy/pa poster.jpg",
     "videos": [],
     "photos": []
+  },
+  {
+    "id": "show-16",
+    "title": "Resurrection Chant Over Hillside",
+    "date": "2023-10-27",
+    "venue": "Rangamati Cultural Institute, Rangamati, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Resurrection Chant Over Hillside, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Ressurection Chat over/rcoh poster.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/uBTqZQNTWZM",
+        "type": "youtube"
+      }
+    ],
+    "photos": []
+  },
+  {
+    "id": "show-17",
+    "title": "Extermination Vol. 3",
+    "date": "2023-12-09",
+    "venue": "Muktodhara Auditorium, Agartala, India",
+    "description": "This show was cancelled. Karmant was scheduled to perform at Extermination Vol. 3 in Agartala, India.",
+    "thumbnail": "/images/Media/Shows/Extermination_cancelled.jpg",
+    "cancelled": true,
+    "videos": [],
+    "photos": []
+  },
+  {
+    "id": "show-18",
+    "title": "Swamp Invasion",
+    "date": "2023-10-14",
+    "venue": "Sylhet Food Palace, Kamria Complex, Barutkhana, East, Sylhet",
+    "description": "Karmant delivered an electrifying performance at Swamp Invasion, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Swamp Invasion/swamp invasion.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Swamp Invasion/si2.jpg",
+        "alt": "Swamp Invasion Photo 1"
+      }
+    ]
+  },
+  {
+    "id": "show-19",
+    "title": "Killmandu Deathfesh 2023",
+    "date": "2023-09-30",
+    "venue": "Beers N' Cheers, Jhamsikhel, Lalitpur, Nepal",
+    "description": "This show was cancelled. Karmant was scheduled to perform at Killmandu Deathfesh 2023 in Nepal.",
+    "thumbnail": "/images/Media/Shows/Killmandu.jpg",
+    "cancelled": true,
+    "videos": [],
+    "photos": []
+  },
+  {
+    "id": "show-20",
+    "title": "Maniac Manifest 2023",
+    "date": "2023-07-17",
+    "venue": "Zilla Shilpokola Academy Auditorium, Chittagong, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Maniac Manifest 2023, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Maniac Manifest/poster mm.jpg",
+    "videos": [
+      {
+        "title": "Video 1",
+        "url": "https://www.youtube.com/embed/uI-YvRfW-Lw",
+        "type": "youtube"
+      },
+      {
+        "title": "Video 2",
+        "url": "https://www.youtube.com/embed/z7mGERTvEWk",
+        "type": "youtube"
+      }
+    ],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm1.jpg",
+        "alt": "Maniac Manifest 2023 Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm2.jpg",
+        "alt": "Maniac Manifest 2023 Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm3.jpg",
+        "alt": "Maniac Manifest 2023 Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm4.jpg",
+        "alt": "Maniac Manifest 2023 Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm5.jpg",
+        "alt": "Maniac Manifest 2023 Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm6.jpg",
+        "alt": "Maniac Manifest 2023 Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm7.jpg",
+        "alt": "Maniac Manifest 2023 Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/Maniac Manifest/mm8.jpg",
+        "alt": "Maniac Manifest 2023 Photo 8"
+      }
+    ]
+  },
+  {
+    "id": "show-21",
+    "title": "Bangladesh Thrashfest 2023",
+    "date": "2023-06-02",
+    "venue": "National Library Auditorium, Agargaon, Dhaka, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Bangladesh Thrashfest 2023, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Thrashfest 2023/poster tffff.jpg",
+    "videos": [
+      {
+        "title": "Full Set",
+        "url": "https://www.youtube.com/embed/oqTcyLHjxXA",
+        "type": "youtube"
+      }
+    ],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff 1.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff 2.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff3.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff6.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff7.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff10.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff11.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff123.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 8"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff343.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 9"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff345.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 10"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff464.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 11"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff756.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 12"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff2452.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 13"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff3545.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 14"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff4343.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 15"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff4543.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 16"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff5345.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 17"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff5455.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 18"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff7456.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 19"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff25245.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 20"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff35653.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 21"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff53653.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 22"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff123012.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 23"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff452423.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 24"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff635534.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 25"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tff5567645.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 26"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/tfff343.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 27"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/342343.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 28"
+      },
+      {
+        "src": "/images/Media/Shows/Thrashfest 2023/fff4.jpg",
+        "alt": "Bangladesh Thrashfest 2023 Photo 29"
+      }
+    ]
+  },
+  {
+    "id": "show-22",
+    "title": "Rock Fest 4.0",
+    "date": "2023-01-06",
+    "venue": "Barishal Shilpokola Academy, Barishal, Bangladesh",
+    "description": "Karmant delivered an electrifying performance at Rock Fest 4.0, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Rock fest 4.0 barisla/Brf Poster.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/482248425_1184372690360386_4816400385361772470_n.jpg",
+        "alt": "Rock Fest 4.0 Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/fsffs.jpg",
+        "alt": "Rock Fest 4.0 Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/gtrf13131.jpg",
+        "alt": "Rock Fest 4.0 Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb 1.jpg",
+        "alt": "Rock Fest 4.0 Photo 4"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/Rfb 2.jpg",
+        "alt": "Rock Fest 4.0 Photo 5"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb3.jpg",
+        "alt": "Rock Fest 4.0 Photo 6"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb4.jpg",
+        "alt": "Rock Fest 4.0 Photo 7"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb5.jpg",
+        "alt": "Rock Fest 4.0 Photo 8"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb363.jpg",
+        "alt": "Rock Fest 4.0 Photo 9"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb2434.jpg",
+        "alt": "Rock Fest 4.0 Photo 10"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb3424.jpg",
+        "alt": "Rock Fest 4.0 Photo 11"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb4234.jpg",
+        "alt": "Rock Fest 4.0 Photo 12"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb7889.jpg",
+        "alt": "Rock Fest 4.0 Photo 13"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/rfb321321.jpg",
+        "alt": "Rock Fest 4.0 Photo 14"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/tbgs13123.jpg",
+        "alt": "Rock Fest 4.0 Photo 15"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/tfb34.jpg",
+        "alt": "Rock Fest 4.0 Photo 16"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/tfb234234.jpg",
+        "alt": "Rock Fest 4.0 Photo 17"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/tffb342.jpg",
+        "alt": "Rock Fest 4.0 Photo 18"
+      },
+      {
+        "src": "/images/Media/Shows/Rock fest 4.0 barisla/trf4324.jpg",
+        "alt": "Rock Fest 4.0 Photo 19"
+      }
+    ]
+  },
+  {
+    "id": "show-23",
+    "title": "Kolkata Metal Festival",
+    "date": "2023-02-05",
+    "venue": "Topcat CCU, 36F Topsia Road, Kolkata, India",
+    "description": "Karmant delivered an electrifying performance at Kolkata Metal Festival, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/Kolkata metal festival/Showposter kmf.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/Kolkata metal festival/kmf 1.jpg",
+        "alt": "Kolkata Metal Festival Photo 1"
+      }
+    ]
+  },
+  {
+    "id": "show-24",
+    "title": "Dismantle all Impediments",
+    "date": "2022-12-23",
+    "venue": "Player's Club, Jamuna Future Park, Dhaka, bangladesh",
+    "description": "Karmant delivered an electrifying performance at Dismantle all Impediments, showcasing their aggressive thrash metal sound and technical precision.",
+    "thumbnail": "/images/Media/Shows/dismantle the ipedimetns/dismance poster.jpg",
+    "videos": [],
+    "photos": [
+      {
+        "src": "/images/Media/Shows/dismantle the ipedimetns/dm 1.jpg",
+        "alt": "Dismantle all Impediments Photo 1"
+      },
+      {
+        "src": "/images/Media/Shows/dismantle the ipedimetns/dm 2.jpg",
+        "alt": "Dismantle all Impediments Photo 2"
+      },
+      {
+        "src": "/images/Media/Shows/dismantle the ipedimetns/dm 3.jpg",
+        "alt": "Dismantle all Impediments Photo 3"
+      },
+      {
+        "src": "/images/Media/Shows/dismantle the ipedimetns/dm 4.jpg",
+        "alt": "Dismantle all Impediments Photo 4"
+      }
+    ]
   }
 ]
