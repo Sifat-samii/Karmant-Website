@@ -26,7 +26,6 @@ const ChevronDownIcon = () => (
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/news', label: 'News' },
-  { href: '/community', label: 'Community' },
   { href: '/band', label: 'Band' },
   { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },

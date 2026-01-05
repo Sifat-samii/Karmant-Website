@@ -21,11 +21,11 @@ export default function BandPage() {
           zIndex: 0,
         }}
       />
-      {/* Dark Overlay for Increased Opacity and Darkness */}
+      {/* Dark Overlay - Lighter at top, fading to darker at bottom */}
       <div 
         className="fixed inset-0"
         style={{
-          backgroundColor: 'rgba(0,0,0,0.75)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0.88) 75%, rgba(0,0,0,0.95) 90%, rgba(0,0,0,0.98) 100%)',
           zIndex: 1,
         }}
       />
@@ -49,7 +49,7 @@ export default function BandPage() {
       <div 
         className="fixed inset-0"
         style={{
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.65) 65%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.95) 85%, black 95%, black 100%)',
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.88) 80%, rgba(0,0,0,0.95) 90%, rgba(0,0,0,0.98) 95%, black 100%)',
           zIndex: 4,
         }}
       />
@@ -71,8 +71,8 @@ export default function BandPage() {
         {/* Header */}
         <div className="relative text-center mb-2 overflow-hidden">
           {/* Content */}
-          <div className="relative z-10 pb-6">
-            <div className="flex justify-center mb-1">
+          <div className="relative z-10 pb-6 pt-0">
+            <div className="flex justify-center mb-1 -mt-[15px]">
               <Image
                 src="/images/Whitelogo.png"
                 alt="Karmant"
@@ -86,7 +86,7 @@ export default function BandPage() {
         </div>
 
         {/* Current Lineup */}
-        <section className="mb-20">
+        <section className="mb-20 mt-8">
           <div className="flex justify-center mb-12">
             <h2 className="text-base md:text-lg font-bold text-metal-red uppercase tracking-wider inline-block px-6 py-2 border border-metal-red">
               Current Lineup

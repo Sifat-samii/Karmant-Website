@@ -244,7 +244,7 @@ export default function VideosPage() {
       <div 
         className="fixed inset-0 bg-top bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: 'url(/images/482093493_1177794414351547_208647928897630965_n.jpg)',
+          backgroundImage: 'url(/images/482092638_1177497837714538_7463511424547364812_n.jpg)',
           backgroundPosition: 'center top',
           backgroundSize: 'cover',
           zIndex: 0,
