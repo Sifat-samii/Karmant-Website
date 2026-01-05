@@ -25,6 +25,11 @@ const getRecentShows = () => {
 export default function PressPage() {
   const newsPosts = getAllNewsPosts()
   const recentShows = getRecentShows()
+  const pressPhotos = (pressData.pressPhotos ?? []) as {
+    url: string
+    name: string
+    downloadUrl?: string
+  }[]
   
   // Get all releases matching the music page structure
   const allReleases = [
@@ -488,7 +493,7 @@ export default function PressPage() {
             featuredPressArticles.find(p => p.title.toLowerCase().includes('when protest finds expression in thrash metal')),
             featuredPressArticles.find(p => p.title.toLowerCase().includes('bangladeshi thrash metal band karmant to perform in kolkata') && p.date === '2022-05-28'),
             featuredPressArticles.find(p => p.title.toLowerCase().includes('beyond the growls and screams')),
-          ].filter(Boolean) // Remove any undefined entries
+          ].filter((p): p is typeof featuredPressArticles[number] => Boolean(p)) // Remove any undefined entries
           
           return sortedArticles.length > 0 ? (
             <section className="mb-16">
@@ -593,9 +598,9 @@ export default function PressPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-metal-red mb-8 uppercase tracking-wider text-center">
             Press Photos
           </h2>
-          {pressData.pressPhotos && pressData.pressPhotos.length > 0 ? (
+          {pressPhotos.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pressData.pressPhotos.map((photo, index) => (
+              {pressPhotos.map((photo, index) => (
                 <div
                   key={index}
                   className="group relative overflow-hidden bg-black/40 border-2 border-metal-gray hover:border-metal-red transition-all duration-300"

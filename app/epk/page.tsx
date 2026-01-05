@@ -26,6 +26,11 @@ export default function EPKPage() {
   const newsPosts = getAllNewsPosts()
   const recentShows = getRecentShows()
   const featuredReleases = releasesData.releases || []
+  const pressPhotos = (pressData.pressPhotos ?? []) as {
+    url: string
+    name: string
+    downloadUrl?: string
+  }[]
 
   return (
     <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen relative">
@@ -400,9 +405,9 @@ export default function EPKPage() {
           <h2 className="text-2xl md:text-3xl font-bold text-metal-red mb-8 uppercase tracking-wider text-center">
             Press Photos
           </h2>
-          {pressData.pressPhotos && pressData.pressPhotos.length > 0 ? (
+          {pressPhotos.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pressData.pressPhotos.map((photo, index) => (
+              {pressPhotos.map((photo, index) => (
                 <div
                   key={index}
                   className="group relative overflow-hidden bg-black/40 border-2 border-metal-gray hover:border-metal-red transition-all duration-300"

@@ -695,15 +695,10 @@ export default function ReleasePage({ params }: PageProps) {
                   const trackSlug = trackName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
                   const trackUrl = release.slug === 'riot-in-uniform' ? `/music/riot-in-uniform/${trackSlug}` : null
                   
-                  const TrackCard = trackUrl ? Link : 'div'
-                  const cardProps = trackUrl ? { href: trackUrl } : {}
-                  
-                  return (
-                    <TrackCard
-                      key={index}
-                      {...cardProps}
-                      className={`group relative overflow-hidden border-2 border-metal-light/30 hover:border-metal-red transition-all duration-300 ${trackUrl ? 'cursor-pointer' : ''}`}
-                    >
+                  const cardClass = `group relative overflow-hidden border-2 border-metal-light/30 hover:border-metal-red transition-all duration-300 ${trackUrl ? 'cursor-pointer' : ''}`
+
+                  const content = (
+                    <>
                       {/* Background artwork overlay */}
                       <div 
                         className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300"
@@ -744,7 +739,21 @@ export default function ReleasePage({ params }: PageProps) {
                       </div>
                       {/* Hover accent line */}
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-metal-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                    </TrackCard>
+                    </>
+                  )
+
+                  if (trackUrl) {
+                    return (
+                      <Link key={index} href={trackUrl} className={cardClass}>
+                        {content}
+                      </Link>
+                    )
+                  }
+
+                  return (
+                    <div key={index} className={cardClass}>
+                      {content}
+                    </div>
                   )
                 })}
               </div>

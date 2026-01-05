@@ -3,9 +3,14 @@
 import { useState } from 'react'
 import mediaData from '@/content/media.json'
 
+type VideoItem = {
+  id: string
+  title: string
+}
+
 export default function VideoGallery() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null)
-  const videos = mediaData.videos || []
+  const videos = (mediaData.videos || []) as VideoItem[]
 
   return (
     <section className="mb-20">
@@ -79,4 +84,3 @@ export default function VideoGallery() {
     </section>
   )
 }
-

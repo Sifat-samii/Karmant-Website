@@ -31,6 +31,17 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
   const month = showDate.toLocaleDateString('en-US', { month: 'long' })
   const day = showDate.getDate()
   const year = showDate.getFullYear()
+  const legacyVideoEmbeds: Record<string, { src: string; title: string }> = {
+    'show-1': { src: 'https://www.youtube.com/embed/N5gY-HkEJIo', title: 'Perpetual Suffering 2021' },
+    'show-2': { src: 'https://www.youtube.com/embed/zE0GRrP8jws', title: 'Combat Terror Vol.1' },
+    'show-5': { src: 'https://www.youtube.com/embed/DjHe5DwBvXc', title: 'Tribute to Legends 2022' },
+    'show-6': { src: 'https://www.youtube.com/embed/cbu3PM63kBA', title: 'Fatal Conchairto' },
+    'show-9': { src: 'https://www.youtube.com/embed/GDdLxf2dhVs', title: 'Rock Fest 3.0' },
+    'show-14': { src: 'https://www.youtube.com/embed/3XjTYmYPniw', title: 'মাইর -Pit (Reinstate)' },
+    'show-16': { src: 'https://www.youtube.com/embed/uBTqZQNTWZM', title: 'Resurrection Chant Over Hillside' },
+    'show-21': { src: 'https://www.youtube.com/embed/oqTcyLHjxXA', title: 'Bangladesh Thrashfest 2023' },
+  }
+  const legacyVideo = legacyVideoEmbeds[show.id]
 
   return (
     <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen">
@@ -456,87 +467,21 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
         )}
 
         {/* Legacy Video Section for shows without videos array */}
-        {(!show.videos || show.videos.length === 0) && (show.id === 'show-1' || show.id === 'show-2' || show.id === 'show-3' || show.id === 'show-4' || show.id === 'show-5' || show.id === 'show-6' || show.id === 'show-7' || show.id === 'show-9' || show.id === 'show-14' || show.id === 'show-16' || show.id === 'show-20' || show.id === 'show-21') && (
+        {(!show.videos || show.videos.length === 0) && legacyVideo && (
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-metal-red mb-6 uppercase tracking-wider">
               Video
             </h2>
             <div className="max-w-6xl mx-auto">
               <div className="relative w-full aspect-video overflow-hidden bg-metal-darker border-2 border-metal-gray">
-                  {show.id === 'show-1' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/N5gY-HkEJIo"
-                      title="Perpetual Suffering 2021"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-2' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/zE0GRrP8jws"
-                      title="Combat Terror Vol.1"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-5' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/DjHe5DwBvXc"
-                      title="Tribute to Legends 2022"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-6' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/cbu3PM63kBA"
-                      title="Fatal Conchairto"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-9' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/GDdLxf2dhVs"
-                      title="Rock Fest 3.0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-14' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/3XjTYmYPniw"
-                      title="মাইর -Pit (Reinstate)"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-16' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/uBTqZQNTWZM"
-                      title="Resurrection Chant Over Hillside"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                  {show.id === 'show-21' && (
-                    <iframe
-                      src="https://www.youtube.com/embed/oqTcyLHjxXA"
-                      title="Bangladesh Thrashfest 2023"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute top-0 left-0 w-full h-full"
-                    />
-                  )}
-                </div>
-              )}
+                <iframe
+                  src={legacyVideo.src}
+                  title={legacyVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                />
+              </div>
             </div>
           </div>
         )}
@@ -562,4 +507,3 @@ export default function ShowDetailPage({ params }: { params: { slug: string } })
     </div>
   )
 }
-
