@@ -47,6 +47,48 @@
     @apply text-4xl md:text-5xl font-bold uppercase tracking-tight mb-8 text-center;
   }
 
+  /* Print Styles for PDF Download */
+  @media print {
+    body {
+      background: white !important;
+      color: black !important;
+    }
+    
+    .fixed {
+      position: static !important;
+    }
+    
+    /* Hide navigation and action buttons when printing */
+    nav,
+    button,
+    .no-print {
+      display: none !important;
+    }
+    
+    /* Ensure content is visible */
+    .relative {
+      position: static !important;
+    }
+    
+    /* Remove background images and overlays */
+    [style*="backgroundImage"],
+    [style*="background-color"] {
+      background: white !important;
+    }
+    
+    /* Make text readable */
+    * {
+      color: black !important;
+      background: white !important;
+    }
+    
+    /* Keep borders for structure */
+    .border-2,
+    .border {
+      border-color: #000 !important;
+    }
+  }
+
   .text-gradient {
     @apply bg-gradient-to-r from-metal-red to-metal-gold bg-clip-text text-transparent;
   }

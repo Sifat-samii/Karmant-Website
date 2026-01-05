@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body>
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen pt-8">{children}</main>
         <Footer />
       </body>
     </html>

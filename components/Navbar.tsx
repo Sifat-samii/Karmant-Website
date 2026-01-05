@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 // Simple menu icons
 const MenuIcon = () => (
@@ -23,10 +24,15 @@ const ChevronDownIcon = () => (
   </svg>
 )
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/news', label: 'News' },
+const leftNavLinks = [
   { href: '/band', label: 'Band' },
+  { href: '/tour', label: 'Tour' },
+  { href: '/music', label: 'Music' },
+  { href: '/merch', label: 'Merch' },
+]
+
+const rightNavLinks = [
+  { href: '/news', label: 'News' },
   { href: '/press', label: 'Press' },
   { href: '/contact', label: 'Contact' },
 ]
@@ -42,6 +48,18 @@ export default function Navbar() {
   const [isMediaOpen, setIsMediaOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const mediaDropdownRef = useRef<HTMLDivElement>(null)
+  const pathname = usePathname()
+  
+  // Check if a link is active
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
+  
+  // Check if Media dropdown should be active (any media sublink is active)
+  const isMediaActive = mediaSubLinks.some(link => pathname.startsWith(link.href))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,45 +89,81 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-metal-darker/95 backdrop-blur-sm border-b border-metal-gray' : 'bg-transparent'
+        scrolled ? 'bg-metal-darker/30 backdrop-blur-sm border-b border-metal-gray' : 'bg-metal-darker/30 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/images/Whitelogo.png"
-              alt="Karmant"
-              width={180}
-              height={48}
-              className="h-12 w-auto"
-              priority
-            />
-          </Link>
+        <div className="flex items-center justify-between h-24">
+          {/* Left Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-4 flex-1 justify-end pr-8">
+            {leftNavLinks.map((link) => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group ${
+                    active ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                  }`}
+                  style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                >
+                  {link.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-metal-red transition-all duration-300 ${
+                    active ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
+                </Link>
+              )
+            })}
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group"
-                style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-metal-red transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+          {/* Center Logo */}
+          <div className="flex-shrink-0 px-6">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/Whitelogo.png"
+                alt="Karmant"
+                width={260}
+                height={70}
+                className="h-20 w-auto"
+                priority
+              />
+            </Link>
+          </div>
+
+          {/* Right Navigation Links */}
+          <div className="hidden lg:flex items-center space-x-4 flex-1 justify-start pl-8">
+            {rightNavLinks.map((link) => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group ${
+                    active ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                  }`}
+                  style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                >
+                  {link.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-metal-red transition-all duration-300 ${
+                    active ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`} />
+                </Link>
+              )
+            })}
             
             {/* Media Dropdown */}
             <div className="relative" ref={mediaDropdownRef}>
               <button
                 onClick={() => setIsMediaOpen(!isMediaOpen)}
-                className="text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group flex items-center gap-1"
+                className={`transition-colors duration-200 font-bold uppercase text-sm tracking-wider relative group flex items-center gap-1 ${
+                  isMediaActive ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                }`}
                 style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
               >
                 Media
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-metal-red transition-all duration-300 group-hover:w-full" />
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-metal-red transition-all duration-300 ${
+                  isMediaActive ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
                 <span className={`transition-transform duration-200 ${isMediaOpen ? 'rotate-180' : ''}`}>
                   <ChevronDownIcon />
                 </span>
@@ -123,18 +177,25 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-48 bg-metal-darker border-2 border-metal-gray shadow-lg z-50"
+                    className="absolute top-full right-0 mt-2 w-48 bg-metal-darker border-2 border-metal-gray shadow-lg z-50"
                   >
-                    {mediaSubLinks.map((sublink) => (
-                      <Link
-                        key={sublink.href}
-                        href={sublink.href}
-                        className="block px-4 py-2 text-metal-light hover:bg-metal-red hover:text-white transition-colors duration-200 font-bold uppercase text-xs tracking-wider"
-                        onClick={() => setIsMediaOpen(false)}
-                      >
-                        {sublink.label}
-                      </Link>
-                    ))}
+                    {mediaSubLinks.map((sublink) => {
+                      const subActive = isActive(sublink.href)
+                      return (
+                        <Link
+                          key={sublink.href}
+                          href={sublink.href}
+                          className={`block px-4 py-2 transition-colors duration-200 font-bold uppercase text-xs tracking-wider ${
+                            subActive 
+                              ? 'bg-metal-red text-white' 
+                              : 'text-metal-light hover:bg-metal-red hover:text-white'
+                          }`}
+                          onClick={() => setIsMediaOpen(false)}
+                        >
+                          {sublink.label}
+                        </Link>
+                      )
+                    })}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -143,7 +204,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-metal-light hover:text-metal-red transition-colors"
+            className="lg:hidden text-metal-light hover:text-metal-red transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -159,26 +220,49 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-metal-darker border-t border-metal-gray"
+            className="lg:hidden bg-metal-darker border-t border-metal-gray"
           >
             <div className="px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider"
-                  style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {leftNavLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block transition-colors duration-200 font-bold uppercase text-sm tracking-wider ${
+                      active ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                    }`}
+                    style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
+              {rightNavLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block transition-colors duration-200 font-bold uppercase text-sm tracking-wider ${
+                      active ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                    }`}
+                    style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              })}
               
               {/* Media Dropdown for Mobile */}
               <div>
                 <button
                   onClick={() => setIsMediaOpen(!isMediaOpen)}
-                  className="w-full flex items-center justify-between text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-sm tracking-wider"
+                  className={`w-full flex items-center justify-between transition-colors duration-200 font-bold uppercase text-sm tracking-wider ${
+                    isMediaActive ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                  }`}
                   style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
                 >
                   Media
@@ -195,19 +279,24 @@ export default function Navbar() {
                       exit={{ opacity: 0, height: 0 }}
                       className="pl-4 mt-2 space-y-2 border-l-2 border-metal-gray"
                     >
-                      {mediaSubLinks.map((sublink) => (
-                        <Link
-                          key={sublink.href}
-                          href={sublink.href}
-                          className="block text-metal-light hover:text-metal-red transition-colors duration-200 font-bold uppercase text-xs tracking-wider"
-                          onClick={() => {
-                            setIsOpen(false)
-                            setIsMediaOpen(false)
-                          }}
-                        >
-                          {sublink.label}
-                        </Link>
-                      ))}
+                      {mediaSubLinks.map((sublink) => {
+                        const subActive = isActive(sublink.href)
+                        return (
+                          <Link
+                            key={sublink.href}
+                            href={sublink.href}
+                            className={`block transition-colors duration-200 font-bold uppercase text-xs tracking-wider ${
+                              subActive ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
+                            }`}
+                            onClick={() => {
+                              setIsOpen(false)
+                              setIsMediaOpen(false)
+                            }}
+                          >
+                            {sublink.label}
+                          </Link>
+                        )
+                      })}
                     </motion.div>
                   )}
                 </AnimatePresence>

@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import Image from 'next/image'
 import siteData from '@/content/site.json'
 
@@ -32,6 +31,20 @@ export default function Hero() {
           className="absolute inset-0 pointer-events-none z-0"
           style={{
             background: 'radial-gradient(ellipse 80% 80% at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%)'
+          }}
+        />
+        {/* Horizontal Fadeout - Dissolve sides into black */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            background: 'linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.6) 100%)'
+          }}
+        />
+        {/* Vertical Fadeout - Dissolve top and bottom into black */}
+        <div 
+          className="absolute inset-0 pointer-events-none z-0"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.6) 100%)'
           }}
         />
       </div>
@@ -96,71 +109,6 @@ export default function Hero() {
           >
             Listen (Bandcamp)
           </a>
-          <Link 
-            href="/music" 
-            className="btn-secondary"
-            style={{ 
-              backgroundColor: 'transparent',
-              border: '3px solid #39ff14',
-              color: '#39ff14',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.3), 0 0 15px rgba(57, 255, 20, 0.2)',
-              transform: 'translateY(-4px)',
-              fontWeight: '900',
-              background: 'rgba(0, 0, 0, 0.3)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#39ff14';
-              e.currentTarget.style.color = '#000000';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#39ff14';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.3), 0 0 15px rgba(57, 255, 20, 0.2)';
-            }}
-          >
-            Music
-          </Link>
-          <Link 
-            href="/tour" 
-            className="btn-secondary"
-            style={{ 
-              backgroundColor: 'transparent',
-              border: '3px solid #39ff14',
-              color: '#39ff14',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.3), 0 0 15px rgba(57, 255, 20, 0.2)',
-              transform: 'translateY(-4px)',
-              fontWeight: '900',
-              background: 'rgba(0, 0, 0, 0.3)'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#39ff14';
-              e.currentTarget.style.color = '#000000';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
-              e.currentTarget.style.color = '#39ff14';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.3), 0 0 15px rgba(57, 255, 20, 0.2)';
-            }}
-          >
-            Tour
-          </Link>
-          <Link 
-            href="/merch" 
-            className="btn-ghost hover:!bg-metal-light hover:!text-metal-darker"
-            style={{ 
-              backgroundColor: 'transparent',
-              border: '3px solid #e5e5e5',
-              color: '#e5e5e5',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(229, 229, 229, 0.3)',
-              transform: 'translateY(-4px)',
-              fontWeight: '900',
-              background: 'rgba(0, 0, 0, 0.3)'
-            }}
-          >
-            Merch
-          </Link>
         </motion.div>
       </div>
     </section>

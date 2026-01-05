@@ -7,6 +7,7 @@ import bandData from '@/content/band.json'
 import pressData from '@/content/press.json'
 import showsData from '@/content/media/shows.json'
 import { getAllNewsPosts } from '@/lib/news'
+import PressActions from '@/components/PressActions'
 
 export const metadata: Metadata = {
   title: 'Electronic Press Kit (EPK) | Karmant',
@@ -118,7 +119,7 @@ export default function PressPage() {
       />
 
       <div className="max-w-7xl mx-auto relative" style={{ zIndex: 10 }}>
-        {/* Back to Home */}
+        {/* Back to Home and Action Buttons */}
         <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
           <Link
             href="/"
@@ -129,6 +130,7 @@ export default function PressPage() {
             </svg>
             Back to Home
           </Link>
+          <PressActions />
         </div>
 
         {/* Hero Section */}

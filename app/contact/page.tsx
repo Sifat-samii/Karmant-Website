@@ -52,7 +52,7 @@ export default function ContactPage() {
       <div 
         className="fixed inset-0 bg-top bg-no-repeat bg-fixed"
         style={{
-          backgroundImage: 'url(/images/482092638_1177497837714538_7463511424547364812_n.jpg)',
+          backgroundImage: 'url(/images/artwork%20gpt%20geberated.png)',
           backgroundPosition: 'center top',
           backgroundSize: 'cover',
           zIndex: 0,

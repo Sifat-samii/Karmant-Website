@@ -254,11 +254,15 @@ export default function PhotosPage() {
   }
 
   // Modal functions
-  const openModal = (index: number) => {
-    // If viewing filtered photos, adjust index
-    if (selectedFilter !== 'all') {
+  const openModal = (index: number, isFeatured: boolean = false) => {
+    if (isFeatured) {
+      // Featured photos are at the start of modalPhotos when filter is 'all'
       setSelectedPhoto(index)
+    } else if (selectedFilter === 'all') {
+      // When filter is 'all, featured photos come first, so add their count to the index
+      setSelectedPhoto(featuredPhotos.length + index)
     } else {
+      // When filtered, modalPhotos equals filteredPhotos, so index matches
       setSelectedPhoto(index)
     }
   }
@@ -401,10 +405,10 @@ export default function PhotosPage() {
                         if (selectedFilter !== 'all') {
                           setSelectedFilter('all')
                           setTimeout(() => {
-                            openModal(idx)
+                            openModal(idx, true)
                           }, 100)
                         } else {
-                          openModal(idx)
+                          openModal(idx, true)
                         }
                       }}
                     />
@@ -585,7 +589,7 @@ export default function PhotosPage() {
                     <div
                       key={`${photo.showId}-${idx}`}
                       id={isFirstOfShow ? `photo-${selectedFilter}` : undefined}
-                      onClick={() => openModal(idx)}
+                      onClick={() => openModal(idx, false)}
                       className="relative aspect-square overflow-hidden bg-metal-darker border border-metal-gray/50 hover:border-metal-red transition-all duration-300 group cursor-pointer"
                     >
                       <Image

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
@@ -37,30 +38,24 @@ export default function MerchPage() {
   return (
     <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Back to Home - Top */}
+        <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+
         {/* Header */}
-        <div className="relative text-center mb-16 overflow-hidden">
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/images/releases/EPs/riot.png)',
-              backgroundPosition: 'center 50%',
-              opacity: 0.3,
-            }}
-          />
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/60" />
-          {/* Gradient - dark to black from top to bottom */}
-          <div 
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 85%, black 100%)',
-            }}
-          />
-          
+        <div className="relative text-center mb-0 overflow-hidden">
           {/* Content */}
-          <div className="relative z-10 pt-20 pb-20">
-            <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-4 font-display uppercase tracking-tight">
+          <div className="relative z-10 pb-20">
+            <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-0 font-display uppercase tracking-tight">
               Merch
             </h1>
           </div>
@@ -109,6 +104,19 @@ export default function MerchPage() {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-metal-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </div>
           ))}
+        </div>
+
+        {/* Back to Home - Bottom */}
+        <div className="mt-16 flex items-center justify-center">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm font-bold uppercase tracking-wider"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+          </Link>
         </div>
       </div>
     </div>
