@@ -8,9 +8,16 @@ export default function MerchPreview() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      {/* Background with subtle glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#0f0505]" />
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(70% 70% at 20% 20%, rgba(255,0,0,0.08), transparent 55%)' }} />
+      {/* Solid black background */}
+      <div className="absolute inset-0 bg-black" />
+      {/* Central glow for depth */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(90% 75% at 50% 50%, rgba(255,0,0,0.16), transparent 70%)'
+        }}
+      />
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Section Title */}

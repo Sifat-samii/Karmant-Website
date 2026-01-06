@@ -306,6 +306,33 @@ export default function VideosPage() {
           </div>
         </div>
 
+        {/* Rehearsal Videos */}
+        <section className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-metal-red uppercase tracking-wider text-center mb-6">
+            Rehearsal Videos
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'Violator - Futurephobia (cover)', src: '/Videos/Futurephobia - Violator cover [790524607187244].mp4', ratio: '9 / 16' },
+              { title: 'General Destroyer', src: '/Videos/General Destroyer [760665620350369].mp4', ratio: '9 / 16' },
+              { title: 'Havok - Afterburner (Cover)', src: '/Videos/Havok - Afterburner [791429790446741].mp4', ratio: '9 / 16' },
+            ].map((item) => (
+              <div key={item.src} className="bg-black/30 border-2 border-metal-gray hover:border-metal-red transition-colors duration-200">
+                <div className="relative w-full overflow-hidden bg-metal-darker" style={{ aspectRatio: item.ratio }}>
+                  <video
+                    src={item.src}
+                    controls
+                    className="w-full h-full object-contain bg-black"
+                  />
+                </div>
+                <div className="px-4 py-3 text-center">
+                  <p className="text-metal-light font-bold uppercase tracking-wider text-sm">{item.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Filter Sidebar */}

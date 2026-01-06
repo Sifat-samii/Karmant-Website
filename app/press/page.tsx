@@ -14,12 +14,19 @@ export const metadata: Metadata = {
   description: 'Professional Electronic Press Kit for Karmant - Bangladesh Thrash Metal',
 }
 
-// Get recent shows (last 5)
+// Get specific recent shows by id (ordered)
 const getRecentShows = () => {
-  return showsData
-    .filter(show => !show.cancelled)
+  const ids = [
+    'show-13', // Bangladesh Thrashfest 2024
+    'show-15', // Primeval Anarchy
+    'show-7',  // Sick Tour II
+    'show-23', // Kolkata Metal Festival
+    'show-16', // Resurrection Chant Over Hillside
+  ]
+  return ids
+    .map(id => showsData.find(show => show.id === id && !show.cancelled))
+    .filter((show): show is NonNullable<typeof show> => Boolean(show))
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 5)
 }
 
 export default function PressPage() {
@@ -557,7 +564,7 @@ export default function PressPage() {
         {recentShows.length > 0 && (
           <section className="mb-16">
             <h2 className="text-2xl md:text-3xl font-bold text-metal-red mb-8 uppercase tracking-wider text-center">
-              Recent Performances
+              Featured Shows
             </h2>
             <div className="flex flex-wrap justify-center gap-6">
               {recentShows.map((show) => (

@@ -7,7 +7,7 @@ export default async function NewsPreview() {
   const latestPosts = posts.slice(0, 3)
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 relative min-h-screen flex items-center">
+    <section className="pt-14 pb-24 px-4 sm:px-6 lg:px-8 relative">
       {/* Background with fadeout effects */}
       <div className="absolute inset-0 bg-black">
         {/* Horizontal Fadeout */}
@@ -22,6 +22,14 @@ export default async function NewsPreview() {
           className="absolute inset-0 pointer-events-none"
           style={{
             background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 20%, transparent 80%, rgba(0,0,0,0.7) 100%)'
+          }}
+        />
+        {/* Central glow (mirrors merch treatment) */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(90% 70% at 50% 50%, rgba(255,0,0,0.16), transparent 72%)'
           }}
         />
       </div>

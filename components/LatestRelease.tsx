@@ -7,20 +7,20 @@ export default function LatestRelease() {
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      {/* Background with subtle gradient glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#180000]" />
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(60% 60% at 20% 20%, rgba(255,0,0,0.08), transparent 55%)' }} />
+      {/* Solid black background */}
+      <div className="absolute inset-0 bg-black" />
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-metal-red mb-3 font-display uppercase tracking-tight">
             EP Spotlight
           </h2>
-          <p className="text-metal-light/70 text-sm uppercase tracking-[0.2em]">Fresh from the Karmant vault</p>
+          <p className="text-metal-light/70 text-sm uppercase tracking-[0.2em]">From the Karmant Vault</p>
         </div>
         
         <div className="grid lg:grid-cols-2 gap-10 items-start bg-black/30 border border-metal-gray/40 backdrop-blur-sm p-8 sm:p-10 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(135deg, rgba(255,0,0,0.08), transparent 60%)' }} />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(-135deg, rgba(255,0,0,0.06), transparent 60%)' }} />
           
           {/* EP Artwork + badge */}
           <div className="relative">
@@ -37,6 +37,7 @@ export default function LatestRelease() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-black/45 pointer-events-none" />
             </div>
             <div className="mt-4 flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-metal-light/70">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-metal-red/15 border border-metal-red/40 text-metal-red font-bold">

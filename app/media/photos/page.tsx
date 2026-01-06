@@ -235,7 +235,7 @@ export default function PhotosPage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentFeaturedIndex((prev) => (prev + 1) % featuredPhotos.length)
-    }, 4000) // Change slide every 4 seconds
+    }, 2500) // Change slide every 2.5 seconds
 
     return () => clearInterval(interval)
   }, [])

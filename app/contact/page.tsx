@@ -203,7 +203,7 @@ export default function ContactPage() {
                 className="inline-flex items-center gap-2 bg-black/40 border-2 border-metal-red/50 text-metal-light hover:bg-metal-red hover:text-white hover:border-metal-red px-6 py-3 font-bold uppercase tracking-wider text-sm transition-all duration-200"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 19.5c-4.136 0-7.5-3.364-7.5-7.5S7.864 4.5 12 4.5s7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5z"/>
+                  <path d="M0 18.75l7.437-13.5H24l-7.5 13.5H0z" />
                 </svg>
                 Bandcamp
               </a>

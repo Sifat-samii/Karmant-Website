@@ -5,7 +5,7 @@ import siteData from '@/content/site.json'
 
 export default function Footer() {
   return (
-    <footer className="relative bg-metal-darker/50 backdrop-blur-sm border-t-2 border-metal-red/30 mt-20 overflow-hidden" style={{ zIndex: 20, position: 'relative' }}>
+    <footer className="relative bg-metal-darker/50 backdrop-blur-sm border-t-2 border-metal-red/30 mt-0 overflow-hidden" style={{ zIndex: 20, position: 'relative' }}>
       {/* Background Pattern Overlay */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute inset-0" style={{
@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center justify-center text-center">
             <div className="mb-4">
               <Image
                 src="/images/Whitelogo.png"
@@ -31,10 +31,7 @@ export default function Footer() {
               {siteData.tagline}
             </p>
             <p className="text-metal-light text-xs opacity-75 mb-4">
-              {siteData.location} • Formed {siteData.formed}
-            </p>
-            <p className="text-metal-light text-xs opacity-60">
-              {siteData.label}
+              {siteData.location}
             </p>
           </div>
 
@@ -65,8 +62,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-metal-light hover:text-metal-red transition-colors text-sm uppercase tracking-wider relative z-30">
-                  Contact
+                <Link href="/tour" className="text-metal-light hover:text-metal-red transition-colors text-sm uppercase tracking-wider relative z-30">
+                  Tour
                 </Link>
               </li>
             </ul>
@@ -114,6 +111,14 @@ export default function Footer() {
               Connect
             </h4>
             <ul className="space-y-3 mb-4">
+              <li>
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 text-metal-light hover:text-metal-red transition-colors text-sm relative z-30"
+                >
+                  <span className="text-sm uppercase tracking-wider">Contact</span>
+                </Link>
+              </li>
               <li>
                 <a
                   href="mailto:mercilesskarmant@gmail.com"
@@ -229,3 +234,4 @@ export default function Footer() {
     </footer>
   )
 }
+
