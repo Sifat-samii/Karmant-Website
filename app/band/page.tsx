@@ -18,14 +18,15 @@ export default function BandPage() {
           backgroundImage: 'url(/images/dsd.png)',
           backgroundPosition: 'center top',
           backgroundSize: 'cover',
+          opacity: 0.35,
           zIndex: 0,
         }}
       />
-      {/* Dark Overlay - Lighter at top, fading to darker at bottom */}
+      {/* Dark Overlay - lighter overall for more background visibility */}
       <div 
         className="fixed inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.6) 15%, rgba(0,0,0,0.7) 35%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0.88) 75%, rgba(0,0,0,0.95) 90%, rgba(0,0,0,0.98) 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.42) 20%, rgba(0,0,0,0.52) 45%, rgba(0,0,0,0.65) 70%, rgba(0,0,0,0.78) 90%, rgba(0,0,0,0.85) 100%)',
           zIndex: 1,
         }}
       />
@@ -33,7 +34,7 @@ export default function BandPage() {
       <div 
         className="fixed inset-0"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 85%, rgba(0,0,0,0.95) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.65) 85%, rgba(0,0,0,0.75) 100%)',
           zIndex: 2,
         }}
       />
@@ -41,7 +42,7 @@ export default function BandPage() {
       <div 
         className="fixed inset-0"
         style={{
-          background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.8) 100%)',
+          background: 'linear-gradient(to right, rgba(0,0,0,0.55) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.55) 100%)',
           zIndex: 3,
         }}
       />
@@ -49,7 +50,7 @@ export default function BandPage() {
       <div 
         className="fixed inset-0"
         style={{
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.88) 80%, rgba(0,0,0,0.95) 90%, rgba(0,0,0,0.98) 95%, black 100%)',
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.06) 40%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.38) 60%, rgba(0,0,0,0.55) 70%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.85) 90%, rgba(0,0,0,0.92) 100%)',
           zIndex: 4,
         }}
       />

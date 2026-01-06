@@ -47,11 +47,13 @@ export default function UpcomingShows() {
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-metal-red mb-4 font-display uppercase tracking-tight">
-            Recent Shows
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-metal-red mb-3 font-display uppercase tracking-tight">
+            Recent Live Assaults
           </h2>
-          <div className="w-24 h-1 bg-metal-red mx-auto"></div>
+          <p className="text-metal-light/70 text-sm uppercase tracking-[0.2em]">
+            Fresh off the stage
+          </p>
         </div>
         
         {/* Shows Grid */}

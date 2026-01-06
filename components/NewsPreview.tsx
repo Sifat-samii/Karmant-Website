@@ -28,11 +28,13 @@ export default async function NewsPreview() {
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-metal-red mb-4 font-display uppercase tracking-tight">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-metal-red mb-3 font-display uppercase tracking-tight">
             News & Updates
           </h2>
-          <div className="w-24 h-1 bg-metal-red mx-auto"></div>
+          <p className="text-metal-light/70 text-sm uppercase tracking-[0.2em]">
+            Latest band intel
+          </p>
         </div>
         
         {/* News Grid */}
@@ -46,12 +48,12 @@ export default async function NewsPreview() {
                   className="group bg-black/30 border-2 border-metal-gray/50 hover:border-metal-red transition-all duration-300 overflow-hidden"
                 >
                   {/* Image */}
-                  <div className="relative aspect-video overflow-hidden">
+                  <div className="relative aspect-[5/4] overflow-hidden">
                     <Image
                       src={post.cover}
                       alt={post.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover object-top group-hover:scale-110 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300"></div>

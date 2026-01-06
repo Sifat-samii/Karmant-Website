@@ -56,9 +56,9 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="mb-8"
-          style={{ marginTop: '-25rem' }}
+          style={{ marginTop: '-26rem' }}
         >
-          <div className="mb-3 flex justify-center">
+          <div className="flex justify-center">
             <Image
               src="/images/logo.bg.png"
               alt="Karmant Logo"
@@ -69,49 +69,16 @@ export default function Hero() {
             />
           </div>
           <p 
-            className="text-2xl md:text-3xl text-metal-light uppercase tracking-wider"
+            className="mt-16 text-xl md:text-2xl font-extrabold text-metal-light uppercase tracking-[0.25em]"
             style={{ 
-              textShadow: '0 4px 8px rgba(0, 0, 0, 0.8), 0 8px 16px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.5)'
+              textShadow: '0 4px 10px rgba(0, 0, 0, 0.85), 0 8px 16px rgba(0, 0, 0, 0.65), 0 0 16px rgba(255, 0, 0, 0.25)'
             }}
           >
             Bangladesh Thrash Metal
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-4"
-          style={{ marginTop: '1rem' }}
-        >
-          <a 
-            href={siteData.socials.bandcamp || '#'} 
-            className="btn-primary" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ 
-              backgroundColor: '#39ff14',
-              border: '3px solid #ffffff',
-              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3)',
-              transform: 'translateY(-4px)',
-              fontWeight: '900',
-              color: '#000000'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#32e60d';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.5), 0 0 30px rgba(57, 255, 20, 0.5)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#39ff14';
-              e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.8), 0 0 0 2px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3)';
-            }}
-          >
-            Listen (Bandcamp)
-          </a>
-        </motion.div>
       </div>
     </section>
   )
 }
-

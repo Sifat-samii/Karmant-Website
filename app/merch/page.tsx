@@ -1,43 +1,54 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import MerchGridClient from '@/components/MerchGridClient'
+import { merchItems } from '@/content/merch-items'
 
 export const metadata: Metadata = {
   title: 'Merch | Karmant',
   description: 'Official Karmant merchandise - T-shirts, CDs, and more',
 }
 
-const merchItems = [
-  {
-    id: 1,
-    name: 'Karmant Logo T-Shirt',
-    image: '/images/merch/tshirt1.jpg',
-    description: 'Official Karmant logo t-shirt',
-    buyLink: 'https://heavymetaltshirtbd.com/details?id=L8IEHG0C--W4RZD30Z23BH-HVKAU721RK0I',
-    buttonText: 'Buy',
-  },
-  {
-    id: 2,
-    name: 'Riot In Uniform T-Shirt',
-    image: '/images/merch/tshirt2.jpg',
-    description: 'Riot In Uniform EP t-shirt',
-    buyLink: 'https://www.facebook.com/photo?fbid=2148578651956124&set=a.256618244485517',
-    buttonText: 'Buy',
-  },
-  {
-    id: 3,
-    name: 'Riot In Uniform EP CD',
-    image: '/images/merch/cd.png',
-    description: 'Physical CD of the Riot In Uniform EP',
-    buyLink: '#',
-    buttonText: 'Pre Order',
-  },
-]
-
 export default function MerchPage() {
   return (
-    <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 min-h-screen relative">
+      {/* Background Image - centered and slightly transparent */}
+      <div 
+        className="fixed inset-0 bg-no-repeat bg-fixed"
+        style={{
+          backgroundImage: 'url("/images/artwork%20gpt%20generated%20cropped.png")',
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+          opacity: 0.4,
+          zIndex: 0,
+        }}
+      />
+      {/* Vignette Effect */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.9) 85%, rgba(0,0,0,0.95) 100%)',
+          zIndex: 2,
+        }}
+      />
+      {/* Horizontal Fadeout */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.8) 100%)',
+          zIndex: 3,
+        }}
+      />
+      {/* Vertical Fadeout */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.95) 95%, black 100%)',
+          zIndex: 4,
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative" style={{ zIndex: 10 }}>
         {/* Back to Home - Top */}
         <div className="mb-8 flex items-center justify-between flex-wrap gap-4">
           <Link
@@ -52,7 +63,7 @@ export default function MerchPage() {
         </div>
 
         {/* Header */}
-        <div className="relative text-center mb-0 overflow-hidden">
+        <div className="relative text-center mb-12 overflow-hidden">
           {/* Content */}
           <div className="relative z-10 pb-20">
             <h1 className="text-5xl md:text-6xl font-bold text-metal-light mb-0 font-display uppercase tracking-tight">
@@ -62,49 +73,7 @@ export default function MerchPage() {
         </div>
 
         {/* Merch Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {merchItems.map((item) => (
-            <div
-              key={item.id}
-              className="group relative overflow-hidden bg-metal-darker border-2 border-metal-gray hover:border-metal-red transition-all duration-300"
-            >
-              {/* Product Image */}
-              <div className="relative aspect-square w-full overflow-hidden bg-metal-gray">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-
-              {/* Product Info */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-metal-light group-hover:text-metal-red transition-colors uppercase tracking-tight mb-2">
-                  {item.name}
-                </h3>
-                <p className="text-sm text-metal-light opacity-75 mb-4">
-                  {item.description}
-                </p>
-                <div className="flex items-center justify-end">
-                  <a
-                    href={item.buyLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white transition-all duration-200 px-4 py-2 text-sm font-bold uppercase tracking-wider"
-                  >
-                    {item.buttonText}
-                  </a>
-                </div>
-              </div>
-
-              {/* Hover accent line */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-metal-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </div>
-          ))}
-        </div>
+        <MerchGridClient items={merchItems} />
 
         {/* Back to Home - Bottom */}
         <div className="mt-16 flex items-center justify-center">
@@ -122,4 +91,3 @@ export default function MerchPage() {
     </div>
   )
 }
-
