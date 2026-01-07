@@ -128,6 +128,7 @@ export default function Home() {
           src="/Videos/video%20bg%20compressed.mp4"
           autoPlayOnView
           showPlayOverlay
+          showMuteOverlay
         />
         <div
           className="pointer-events-none absolute inset-0"
