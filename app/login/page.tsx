@@ -25,24 +25,20 @@ export default function LoginPage() {
           background: 'linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.18) 18%, rgba(0,0,0,0) 36%, rgba(0,0,0,0) 64%, rgba(0,0,0,0.18) 82%, rgba(0,0,0,0.6) 100%)'
         }}
       />
-      <div className="relative max-w-xl w-full border border-metal-gray/60 bg-black/50 backdrop-blur-md p-10 shadow-2xl shadow-black/40 space-y-6">
-        <div className="space-y-2 text-center">
-          <p className="text-xs tracking-[0.2em] uppercase text-metal-gray">Account / Login</p>
-          <h1 className="text-3xl font-extrabold uppercase tracking-widest">Under Development</h1>
-          <p className="text-sm text-metal-gray">
-            This page is a placeholder. Reach out for booking, press, or merch via the links below.
-          </p>
+      <div className="relative text-center space-y-6">
+        <div className="space-y-2">
+          <h1 className="text-5xl font-extrabold uppercase tracking-[0.35em] drop-shadow-[0_6px_16px_rgba(0,0,0,0.75)]">Under Development</h1>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-3 text-sm uppercase tracking-wide">
           <Link
             href="/contact"
-            className="px-5 py-3 border border-metal-gray text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-center"
+            className="px-6 py-3 border border-metal-gray text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-sm uppercase tracking-wide"
           >
             Contact
           </Link>
           <Link
             href="/regiment"
-            className="px-5 py-3 border border-metal-gray text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-center"
+            className="px-6 py-3 border border-metal-gray text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-sm uppercase tracking-wide"
           >
             Join Karmant Regiment
           </Link>
