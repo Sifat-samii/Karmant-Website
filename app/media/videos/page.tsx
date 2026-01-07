@@ -313,7 +313,7 @@ export default function VideosPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Violator - Futurephobia (cover)', src: '/Videos/Futurephobia - Violator cover [790524607187244].mp4', ratio: '9 / 16' },
+              { title: 'Violator - Futurephobia (cover)', src: '/Videos/Futurephobia - Violator cover.mp4', ratio: '9 / 16' },
               { title: 'General Destroyer', src: '/Videos/General Destroyer [760665620350369].mp4', ratio: '9 / 16' },
               { title: 'Havok - Afterburner (Cover)', src: '/Videos/Havok - Afterburner [791429790446741].mp4', ratio: '9 / 16' },
             ].map((item) => (
