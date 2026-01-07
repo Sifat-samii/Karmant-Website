@@ -66,8 +66,10 @@ export default function Navbar() {
   const [searchTerm, setSearchTerm] = useState('')
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const mediaDropdownRef = useRef<HTMLDivElement>(null)
+  const mediaDropdownMobileRef = useRef<HTMLDivElement>(null)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const userMenuRef = useRef<HTMLDivElement>(null)
+  const userMenuMobileRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
   const router = useRouter()
   
@@ -96,10 +98,16 @@ export default function Navbar() {
       if (mediaDropdownRef.current && !mediaDropdownRef.current.contains(event.target as Node)) {
         setIsMediaOpen(false)
       }
+      if (mediaDropdownMobileRef.current && !mediaDropdownMobileRef.current.contains(event.target as Node)) {
+        setIsMediaOpen(false)
+      }
       if (isSearchOpen && searchInputRef.current && !searchInputRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false)
       }
       if (isUserMenuOpen && userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false)
+      }
+      if (userMenuMobileRef.current && !userMenuMobileRef.current.contains(event.target as Node)) {
         setIsUserMenuOpen(false)
       }
     }
@@ -174,6 +182,20 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
             </form>
+          </div>
+
+          {/* Mobile: Logo */}
+          <div className="flex-1 flex justify-center lg:hidden">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/Whitelogo.png"
+                alt="Karmant"
+                width={200}
+                height={60}
+                className="h-12 w-auto"
+                priority
+              />
+            </Link>
           </div>
 
           {/* Center: Logo + Nav Links */}
@@ -350,7 +372,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-metal-light hover:text-metal-red transition-colors ml-auto"
+            className="lg:hidden text-metal-light hover:text-metal-red transition-colors flex-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -423,9 +445,12 @@ export default function Navbar() {
               })}
               
               {/* Media Dropdown for Mobile */}
-              <div>
+              <div ref={mediaDropdownMobileRef}>
                 <button
-                  onClick={() => setIsMediaOpen(!isMediaOpen)}
+                  onClick={() => {
+                    setIsMediaOpen((prev) => !prev)
+                    setIsUserMenuOpen(false)
+                  }}
                   className={`w-full flex items-center justify-between transition-colors duration-200 font-bold uppercase text-sm tracking-wider ${
                     isMediaActive ? 'text-metal-red' : 'text-metal-light hover:text-metal-red'
                   }`}
@@ -463,6 +488,74 @@ export default function Navbar() {
                           </Link>
                         )
                       })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Menu Dropdown for Mobile */}
+              <div ref={userMenuMobileRef}>
+                <button
+                  onClick={() => {
+                    setIsUserMenuOpen((prev) => !prev)
+                    setIsMediaOpen(false)
+                  }}
+                  className="w-full flex items-center justify-between transition-colors duration-200 font-bold uppercase text-sm tracking-wider text-metal-light hover:text-metal-red"
+                  style={{ WebkitFontSmoothing: 'antialiased', textRendering: 'optimizeLegibility' }}
+                >
+                  Menu
+                  <span className={`transition-transform duration-200 ${isUserMenuOpen ? 'rotate-180' : ''}`}>
+                    <ChevronDownIcon />
+                  </span>
+                </button>
+
+                <AnimatePresence>
+                  {isUserMenuOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="pl-4 mt-2 space-y-2 border-l-2 border-metal-gray"
+                    >
+                      <Link
+                        href="/"
+                        className="block transition-colors duration-200 font-bold uppercase text-xs tracking-wider text-metal-light hover:text-metal-red"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Home
+                      </Link>
+                      <Link
+                        href="/login"
+                        className="block transition-colors duration-200 font-bold uppercase text-xs tracking-wider text-metal-light hover:text-metal-red"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Account/Login
+                      </Link>
+                      <Link
+                        href="/regiment"
+                        className="block transition-colors duration-200 font-bold uppercase text-xs tracking-wider text-metal-light hover:text-metal-red"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Join Karmant Regiment
+                      </Link>
+                      <a
+                        href="https://www.facebook.com/mercilesskarmant"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block transition-colors duration-200 font-bold uppercase text-xs tracking-wider text-metal-light hover:text-metal-red"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Facebook
+                      </a>
+                      <a
+                        href="https://www.instagram.com/k.a.r.m.a.n.t?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block transition-colors duration-200 font-bold uppercase text-xs tracking-wider text-metal-light hover:text-metal-red"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Instagram
+                      </a>
                     </motion.div>
                   )}
                 </AnimatePresence>
