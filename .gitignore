@@ -38,3 +38,8 @@ next-env.d.ts
 #debug logs
 .cursor/
 
+# large media (removed from history)
+public/Videos/Riot Reel - Made with Clipchamp.mp4
+public/Videos/video bg.mp4
+public/Videos/KARMANT- Smelling Death Rehearsal [1930930161090744].mp4
+
