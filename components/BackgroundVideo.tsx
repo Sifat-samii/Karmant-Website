@@ -26,13 +26,28 @@ export default function BackgroundVideo({
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [userPaused, setUserPaused] = useState(false)
   const [hasPlayed, setHasPlayed] = useState(false)
+  const [needsUserPlay, setNeedsUserPlay] = useState(false)
+  const [isReload, setIsReload] = useState(false)
+
+  useEffect(() => {
+    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined
+    setIsReload(navigation?.type === 'reload')
+  }, [])
+
+  const attemptPlay = () => {
+    const video = videoRef.current
+    if (!video) return
+    void video.play().catch(() => {
+      setNeedsUserPlay(true)
+    })
+  }
 
   const togglePlay = () => {
     const video = videoRef.current
     if (!video) return
     if (video.paused) {
       void video.play().then(() => setUserPaused(false)).catch(() => {
-        /* autoplay might be blocked until interaction; keep trying on visibility */
+        setNeedsUserPlay(true)
       })
     } else {
       video.pause()
@@ -53,9 +68,7 @@ export default function BackgroundVideo({
           setIsIntersecting(visible)
           if (visible) {
             if (!userPaused) {
-              void video.play().catch(() => {
-                /* autoplay might be blocked until user interaction */
-              })
+              attemptPlay()
             }
           } else if (!visible) {
             video.pause()
@@ -75,20 +88,14 @@ export default function BackgroundVideo({
     if (!isIntersecting) {
       video.pause()
     } else if (!userPaused) {
-      void video.play().catch(() => {
-        /* ignore autoplay rejection */
-      })
+      attemptPlay()
     }
   }, [isIntersecting, autoPlayOnView, userPaused])
 
   // Always attempt playback on mount/reload
   useEffect(() => {
     if (!userPaused) {
-      const video = videoRef.current
-      if (!video) return
-      void video.play().catch(() => {
-        /* autoplay might be blocked until user interaction */
-      })
+      attemptPlay()
     }
   }, [src, userPaused])
 
@@ -102,10 +109,13 @@ export default function BackgroundVideo({
         loop={loop}
         playsInline={playsInline}
         onClick={togglePlay}
-        onPlay={() => setHasPlayed(true)}
+        onPlay={() => {
+          setHasPlayed(true)
+          setNeedsUserPlay(false)
+        }}
       />
-      {showPlayOverlay && !hasPlayed && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+      {showPlayOverlay && isReload && needsUserPlay && !hasPlayed && (
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-auto">
           <button
             type="button"
             aria-label="Play video"
