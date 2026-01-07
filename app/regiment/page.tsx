@@ -12,6 +12,16 @@ export default function RegimentPage() {
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: "url('/images/karmant regimet.png')",
+          backgroundSize: '70%',
+          backgroundPosition: 'center 40%',
+          opacity: 0.6,
+          filter: 'grayscale(10%)',
+        }}
+      />
+      <div
+        className="absolute inset-0 pointer-events-none hidden sm:block"
+        style={{
+          backgroundImage: "url('/images/karmant regimet.png')",
           backgroundSize: '60%',
           backgroundPosition: 'center',
           opacity: 0.6,
@@ -26,13 +36,15 @@ export default function RegimentPage() {
         }}
       />
 
-      <div className="relative text-center space-y-6">
+      <div className="relative text-center space-y-6 sm:space-y-8">
         <p className="text-xs tracking-[0.25em] uppercase text-metal-gray">Karmant Regiment</p>
-        <h1 className="text-5xl font-extrabold uppercase tracking-[0.35em] drop-shadow-[0_6px_16px_rgba(0,0,0,0.75)]">Reforming Soon</h1>
+        <h1 className="text-3xl sm:text-5xl font-extrabold uppercase tracking-[0.2em] sm:tracking-[0.35em] drop-shadow-[0_6px_16px_rgba(0,0,0,0.75)]">
+          Reforming Soon
+        </h1>
         <div className="flex justify-center">
           <Link
             href="/"
-            className="px-6 py-3 border border-metal-gray text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-sm uppercase tracking-wide"
+            className="px-6 py-3 border border-metal-red text-metal-light hover:text-white hover:border-metal-red hover:bg-metal-red transition-colors duration-200 text-sm uppercase tracking-wide"
           >
             Back to Home
           </Link>
