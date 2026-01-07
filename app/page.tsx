@@ -127,6 +127,7 @@ export default function Home() {
           className="w-full h-full object-cover opacity-60 cursor-pointer"
           src="/Videos/video%20bg%20compressed.mp4"
           autoPlayOnView
+          showPlayOverlay
         />
         <div
           className="pointer-events-none absolute inset-0"

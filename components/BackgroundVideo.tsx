@@ -9,6 +9,7 @@ type BackgroundVideoProps = {
   loop?: boolean
   playsInline?: boolean
   autoPlayOnView?: boolean
+  showPlayOverlay?: boolean
 }
 
 export default function BackgroundVideo({
@@ -18,11 +19,13 @@ export default function BackgroundVideo({
   loop = true,
   playsInline = true,
   autoPlayOnView = false,
+  showPlayOverlay = false,
 }: BackgroundVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isIntersecting, setIsIntersecting] = useState(false)
   const [userPaused, setUserPaused] = useState(false)
+  const [hasPlayed, setHasPlayed] = useState(false)
 
   const togglePlay = () => {
     const video = videoRef.current
@@ -90,7 +93,7 @@ export default function BackgroundVideo({
   }, [src, userPaused])
 
   return (
-    <div ref={containerRef} className="w-full h-full">
+    <div ref={containerRef} className="w-full h-full relative">
       <video
         ref={videoRef}
         className={className}
@@ -99,7 +102,27 @@ export default function BackgroundVideo({
         loop={loop}
         playsInline={playsInline}
         onClick={togglePlay}
+        onPlay={() => setHasPlayed(true)}
       />
+      {showPlayOverlay && !hasPlayed && (
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+          <button
+            type="button"
+            aria-label="Play video"
+            className="pointer-events-auto group relative h-12 w-12 sm:h-14 sm:w-14 border border-metal-red/70 bg-black/40 text-metal-red shadow-[0_0_20px_rgba(220,38,38,0.25)] transition-transform duration-200 hover:scale-105"
+            onClick={togglePlay}
+          >
+            <span className="absolute inset-0 border border-metal-red/30 rotate-45 scale-90" />
+            <svg
+              className="relative mx-auto h-5 w-5 sm:h-6 sm:w-6"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
