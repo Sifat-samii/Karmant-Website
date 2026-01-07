@@ -14,11 +14,11 @@ export default function RegimentPage() {
           backgroundImage: "url('/images/karmant regimet.png')",
           backgroundSize: '60%',
           backgroundPosition: 'center',
-          opacity: 0.45,
-          filter: 'grayscale(20%)',
+          opacity: 0.6,
+          filter: 'grayscale(10%)',
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/55 to-black/70 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60 pointer-events-none" />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

@@ -58,7 +58,7 @@ export default function Home() {
           <span className="text-sm font-bold uppercase tracking-wider">Apple Music</span>
         </a>
         <a
-          href="https://www.youtube.com/watch?v=3XjTYmYPniw"
+          href="https://youtube.com/playlist?list=PLjvcEUPyZSDY0rLGnwnhBHem-ZaCjTANC&si=Xgmh04dHd31Hqs1z"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-metal-red/30"
@@ -74,7 +74,7 @@ export default function Home() {
           <span className="text-sm font-bold uppercase tracking-wider">YouTube</span>
         </a>
         <a
-          href="https://music.amazon.com/albums/B091YQGJGB"
+          href="https://amazon.com/music/player/albums/B0917VKFDP?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_JGt99cq2o6EHA1wnLXQuoGN8E"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-metal-red/30"
@@ -90,7 +90,7 @@ export default function Home() {
           <span className="text-sm font-bold uppercase tracking-wider">Amazon Music</span>
         </a>
         <a
-          href="https://tidal.com/browse/album/179807087"
+          href="https://tidal.com/album/178731941/u"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-metal-red/30"
@@ -106,7 +106,7 @@ export default function Home() {
           <span className="text-sm font-bold uppercase tracking-wider">Tidal</span>
         </a>
         <a
-          href="https://www.deezer.com/us/album/220268272"
+          href="https://link.deezer.com/s/322vsfEw2bFGadoq0VVyi"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 py-2 bg-black/30 border border-metal-red text-metal-light hover:bg-metal-red hover:text-white transition-all duration-200 hover:scale-105 hover:shadow-md hover:shadow-metal-red/30"
