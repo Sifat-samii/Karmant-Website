@@ -125,7 +125,7 @@ export default function Home() {
       <section className="relative w-full bg-black overflow-hidden">
         <BackgroundVideo
           className="w-full h-full object-cover opacity-60 cursor-pointer"
-          src="/Videos/video%20bg.mp4"
+          src="/Videos/video%20bg%20compressed.mp4"
           autoPlayOnView
         />
         <div
